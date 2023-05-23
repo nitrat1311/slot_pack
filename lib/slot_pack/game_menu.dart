@@ -5,13 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flame/flame.dart';
-import 'package:neon/neon.dart';
 
 import '../const_colors.dart';
 import 'game_play.dart';
 import 'records_tbl.dart';
-import 'resources_preloader.dart';
+
 import 'select_spaceship.dart';
+import 'widgets/glowing_button.dart';
 
 class GameMenu extends StatelessWidget {
   const GameMenu({Key? key}) : super(key: key);
@@ -21,7 +21,7 @@ class GameMenu extends StatelessWidget {
     ScreenUtil.ensureScreenSize();
     Flame.device.fullScreen();
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    loadRes();
+
     ScreenUtil.init(
       context,
       designSize: const Size(428, 926),
@@ -44,71 +44,51 @@ class GameMenu extends StatelessWidget {
               child: Column(
                 children: [
                   Padding(
-                    padding:
-                        REdgeInsets.fromLTRB(0, AppColors.randomPadding, 0, 0),
+                    padding: REdgeInsets.fromLTRB(0, 29, 0, 0),
                     child: AutoSizeText(
-                      AppColors.appLable,
+                      'Football 1',
                       wrapWords: false,
-                      maxLines: 2,
+                      maxLines: 1,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          backgroundColor: Colors.amber.withOpacity(0.5),
-                          foreground: Paint()..color = Colors.black,
+                          background: Paint()
+                            ..color = AppColors.buttonColor.withOpacity(0.3),
+                          foreground: Paint()..color = AppColors.frontColor,
                           fontSize: 50,
                           fontWeight: FontWeight.normal,
                           shadows: const [
                             Shadow(
-                              offset: Offset(0, -2.0),
+                              offset: Offset(3, 3.0),
                               blurRadius: 8,
-                              color: Colors.white,
+                              color: AppColors.backColor,
                             ),
                           ]),
                     ),
                   ),
-                  SizedBox(height: AppColors.randomPadding * 2.2.h),
-                  Padding(
-                    padding: REdgeInsets.only(left: AppColors.randomPadding),
+                  SizedBox(
+                    height: 40.h,
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
                     child: GestureDetector(
-                      child: Neon(
-                        text: 'New Game',
-                        color: AppColors.buttonColor,
-                        fontSize: 40.h,
-                        font: AppColors.neonFont,
-                      ),
                       onTap: () {
-                        Navigator.of(context).push(
+                        Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
                             builder: (context) => const SelectCharacter(),
                           ),
                         );
                       },
-                    ),
-                  ),
-                  SizedBox(height: AppColors.randomPadding.h),
-                  Padding(
-                    padding:
-                        REdgeInsets.only(right: AppColors.randomPadding - 10),
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => const RecordsTbl(),
-                          ),
-                        );
-                      },
-                      child: Neon(
-                        text: 'Score',
-                        color: AppColors.buttonColor,
-                        fontSize: 40.h,
-                        font: AppColors.neonFont,
-                        glowingDuration: AppColors.glowingDuration,
+                      child: GlowingButton(
+                        child: Text(
+                          'new game',
+                          style: TextStyle(
+                              color: AppColors.textButtonMenu, fontSize: 30.sp),
+                        ),
                       ),
                     ),
                   ),
-                  SizedBox(height: AppColors.randomPadding.h),
-                  Padding(
-                    padding:
-                        REdgeInsets.only(right: AppColors.randomPadding + 30),
+                  Align(
+                    alignment: Alignment.centerRight,
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -117,12 +97,31 @@ class GameMenu extends StatelessWidget {
                           ),
                         );
                       },
-                      child: Neon(
-                        text: 'Settings',
-                        color: AppColors.buttonColor,
-                        fontSize: 40.h,
-                        font: AppColors.neonFont,
-                        glowingDuration: AppColors.glowingDuration,
+                      child: GlowingButton(
+                        child: Text(
+                          'settings',
+                          style: TextStyle(
+                              color: AppColors.textButtonMenu, fontSize: 30.sp),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => RecordsTbl(),
+                          ),
+                        );
+                      },
+                      child: GlowingButton(
+                        child: Text(
+                          'records',
+                          style: TextStyle(
+                              color: AppColors.textButtonMenu, fontSize: 30.sp),
+                        ),
                       ),
                     ),
                   ),

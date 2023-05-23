@@ -1,5 +1,3 @@
-library slot_package;
-
 import 'package:flame/components.dart';
 
 // This class represents a command that will be run

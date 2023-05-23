@@ -2,14 +2,13 @@ library slot_package;
 
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
-
-import 'resources_preloader.dart';
-import 'over_menu.dart';
+import 'package:slot_package/slot_pack/widgets/overlays/game_over_menu.dart';
 
 import 'game/game.dart';
-import 'pause_btn.dart';
-import 'pause_menu.dart';
+
 import 'settings_menu.dart';
+import 'widgets/overlays/pause_button.dart';
+import 'widgets/overlays/pause_menu.dart';
 
 // Creating this as a file private object so as to
 // avoid unwanted rebuilds of the whole game object.
@@ -46,8 +45,8 @@ class GamePlay extends StatelessWidget {
                 PauseMenu(
                   gameRef: gameRef,
                 ),
-            OverMenu.id: (BuildContext context, MasksweirdGame gameRef) =>
-                OverMenu(
+            GameOverMenu.id: (BuildContext context, MasksweirdGame gameRef) =>
+                GameOverMenu(
                   gameRef: gameRef,
                 ),
             SettingsMenu.id: (BuildContext context, MasksweirdGame gameRef) =>

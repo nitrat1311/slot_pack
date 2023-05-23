@@ -8,7 +8,7 @@ import 'game_menu.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RecordsTbl extends StatelessWidget {
-  static List records = [10, 0, 50, 200];
+  static List records = [30, 80, 7, 200, 350];
   const RecordsTbl({
     Key? key,
   }) : super(key: key);
