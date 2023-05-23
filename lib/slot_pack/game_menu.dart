@@ -46,7 +46,7 @@ class GameMenu extends StatelessWidget {
                   Padding(
                     padding: REdgeInsets.fromLTRB(0, 29, 0, 0),
                     child: AutoSizeText(
-                      'Football 1',
+                      AppColors.appLable,
                       wrapWords: false,
                       maxLines: 1,
                       textAlign: TextAlign.center,
