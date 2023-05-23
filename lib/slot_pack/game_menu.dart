@@ -18,9 +18,16 @@ class GameMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.ensureScreenSize();
     Flame.device.fullScreen();
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     loadRes();
+    ScreenUtil.init(
+      context,
+      designSize: const Size(428, 926),
+      minTextAdapt: true,
+      splitScreenMode: true,
+    );
     return Scaffold(
       body: Stack(children: [
         Image.asset(
