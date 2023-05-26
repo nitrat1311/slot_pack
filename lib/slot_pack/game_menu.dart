@@ -93,7 +93,7 @@ class GameMenu extends StatelessWidget {
                       onTap: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => const GamePlay(startPage: 1),
+                            builder: (context) => const SettingsMenu(),
                           ),
                         );
                       },

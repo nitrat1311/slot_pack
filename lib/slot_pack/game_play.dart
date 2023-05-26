@@ -19,7 +19,7 @@ import 'widgets/overlays/pause_menu.dart';
 // where all the action happens.
 class GamePlay extends StatelessWidget {
   final int startPage;
-  const GamePlay({Key? key, required this.startPage}) : super(key: key);
+  const GamePlay({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,8 +34,7 @@ class GamePlay extends StatelessWidget {
         child: GameWidget(
           game: MasksweirdGame(),
           // Initially only pause button overlay will be visible.
-          initialActiveOverlays:
-              startPage == 0 ? [PauseButton.id] : [SettingsMenu.id],
+          initialActiveOverlays: [PauseButton.id],
           overlayBuilderMap: {
             PauseButton.id: (BuildContext context, MasksweirdGame gameRef) =>
                 PauseButton(
@@ -47,10 +46,6 @@ class GamePlay extends StatelessWidget {
                 ),
             GameOverMenu.id: (BuildContext context, MasksweirdGame gameRef) =>
                 GameOverMenu(
-                  gameRef: gameRef,
-                ),
-            SettingsMenu.id: (BuildContext context, MasksweirdGame gameRef) =>
-                SettingsMenu(
                   gameRef: gameRef,
                 ),
           },
