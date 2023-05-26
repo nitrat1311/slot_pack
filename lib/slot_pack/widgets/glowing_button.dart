@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../const_colors.dart';
+import '../../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
 
 class GlowingButton extends StatefulWidget {
   final Widget child;
@@ -26,7 +26,8 @@ class GlowingButtonState extends State<GlowingButton> {
       // width: MediaQuery.of(context).size.width / 1.5,
       // height: MediaQuery.of(context).size.height / 12,
       decoration: BoxDecoration(
-        border: Border.all(Color.fromARGB(255, 20, 19, 19), width: 2),
+        border:
+            Border.all(color: const Color.fromARGB(255, 20, 19, 19), width: 2),
         borderRadius: BorderRadius.circular(AppColors.randomPadding - 8),
         gradient: const LinearGradient(
           colors: [

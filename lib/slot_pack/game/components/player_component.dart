@@ -1,21 +1,22 @@
-import 'package:pilot_legend_avia/game/ally.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
-import 'package:pilot_legend_avia/game/components/bullet_component.dart';
-import 'package:pilot_legend_avia/game/components/enemy_component.dart';
-import 'package:pilot_legend_avia/game/components/explosion_component.dart';
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import '../../models/player_data.dart';
+import 'package:flutter/material.dart';
+
+import '../../../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
+import '../ally.dart';
+import 'bullet_component.dart';
+import 'enemy_component.dart';
+import 'explosion_component.dart';
 
 class PlayerComponent extends SpriteAnimationComponent
     with HasGameRef, CollisionCallbacks {
   late TimerComponent bulletCreator;
   int _health = 100;
+  int _currentScore = 0;
   int get health => _health;
-  late PlayerData _playerData;
-  int get score => _playerData.currentScore;
+
+  int get score => _currentScore;
 
   PlayerComponent()
       : super(
@@ -39,8 +40,6 @@ class PlayerComponent extends SpriteAnimationComponent
       anchor: Anchor.center,
     );
     add(shape);
-
-    _playerData = Provider.of<PlayerData>(gameRef.buildContext!, listen: false);
   }
 
   @override
@@ -55,7 +54,7 @@ class PlayerComponent extends SpriteAnimationComponent
       ),
     );
     animation = await gameRef.loadSpriteAnimation(
-      'shooter/player.png',
+      'packages/${AppColors.myPackage}/assets/images/player.png',
       SpriteAnimationData.sequenced(
         stepTime: 0.2,
         amount: 4,
@@ -105,10 +104,7 @@ class PlayerComponent extends SpriteAnimationComponent
   }
 
   void addToScore(int points) {
-    _playerData.currentScore = points;
-
-    // Saves player data to disk.
-    _playerData.save();
+    _currentScore = points;
   }
 
   @override

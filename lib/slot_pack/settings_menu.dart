@@ -1,14 +1,12 @@
 library slot_package;
 
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:slot_package/slot_pack/game/audio_player_component.dart';
+import 'package:just_audio/just_audio.dart';
 
-import '../const_colors.dart';
+import '../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
 import 'game_menu.dart';
-import 'game/game.dart';
 
 // This class represents the settings menu.
 class SettingsMenu extends StatefulWidget {
@@ -24,7 +22,7 @@ class _SettingsMenuState extends State<SettingsMenu> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    var audio = AudioPlayerComponent();
+    var audio = AudioPlayer();
     return Scaffold(
       body: Stack(children: [
         Image.asset(
@@ -100,11 +98,13 @@ class _SettingsMenuState extends State<SettingsMenu> {
                     ),
                     value: value,
                     onChanged: (newValue) {
-                      setState(() {
+                      setState(() async {
                         if (value) {
-                          audio.playBgm('assets/audio/music.mp3');
+                          await audio.setAsset(
+                              'packages/${AppColors.myPackage}/assets/audio/music.mp3');
+                          audio.play();
                         }
-                        audio.stopBgm();
+                        audio.stop();
                         value = newValue;
                       });
                     },

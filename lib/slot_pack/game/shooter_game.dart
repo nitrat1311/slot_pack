@@ -1,13 +1,13 @@
-import 'package:pilot_legend_avia/game/components/enemy_component.dart';
-import 'package:pilot_legend_avia/game/components/health_bar.dart';
-import 'package:pilot_legend_avia/game/records/bloc/records_bloc.dart';
+import '../../../../../../slot_pack/lib/slot_pack/game/components/enemy_component.dart';
+import '../../../../../../slot_pack/lib/slot_pack/game/components/health_bar.dart';
+
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
-import 'package:pilot_legend_avia/game/components/enemy_creator.dart';
-import 'package:pilot_legend_avia/game/components/player_component.dart';
-import 'package:pilot_legend_avia/game/components/star_background_creator.dart';
-
+import '../../../../../../slot_pack/lib/slot_pack/game/components/enemy_creator.dart';
+import '../../../../../../slot_pack/lib/slot_pack/game/components/player_component.dart';
+import '../../../../../../slot_pack/lib/slot_pack/game/components/star_background_creator.dart';
+import '../../../../../../slot_pack/lib/slot_pack/game/shooter_game.dart';
 import '../widgets/overlays/game_over_menu.dart';
 import '../widgets/overlays/pause_button.dart';
 import 'ally_manager.dart';
@@ -16,9 +16,9 @@ class RogueShooterGame extends FlameGame
     with PanDetector, HasCollisionDetection {
   late final PlayerComponent player;
   late final TextComponent scoreText;
-  final RecordsBloc recordsBloc;
+
   int score = 0;
-  RogueShooterGame({required this.recordsBloc});
+
   @override
   Future<void> onLoad() async {
     add(player = PlayerComponent());
@@ -50,7 +50,7 @@ class RogueShooterGame extends FlameGame
 
   void reset() {
     // First reset player, enemy manager and power-up manager .
-    recordsBloc.saveRecord(player.score);
+
     // _enemyManager.reset();
     score = 0;
     children.whereType<EnemyComponent>().forEach((enemy) {

@@ -1,17 +1,16 @@
-import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../const_colors.dart';
-import '../../game/game.dart';
+import '../../../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
+import '../../game/shooter_game.dart';
 
-import '../../game_menu.dart';
+import '../../game/shooter_widget.dart';
 import 'pause_button.dart';
 
 // This class represents the pause menu overlay.
 class PauseMenu extends StatelessWidget {
   static const String id = 'PauseMenu';
-  final MasksweirdGame gameRef;
+  final RogueShooterGame gameRef;
 
   const PauseMenu({Key? key, required this.gameRef}) : super(key: key);
 
@@ -34,7 +33,7 @@ class PauseMenu extends StatelessWidget {
                       ..style = PaintingStyle.stroke
                       ..strokeWidth = 4
                       ..color = AppColors.backColor,
-                    fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.w700),
               ),
               Text(
                 'Paused',
@@ -45,7 +44,7 @@ class PauseMenu extends StatelessWidget {
                       ..style = PaintingStyle.fill
                       ..strokeWidth = 1
                       ..color = AppColors.frontColor,
-                    fontWeight: FontWeight.bold),
+                    fontWeight: FontWeight.w700),
               ),
             ]),
           ),
@@ -56,10 +55,14 @@ class PauseMenu extends StatelessWidget {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: AppColors.buttonColor, width: 4),
+                  border: Border.all(color: Colors.transparent, width: 4),
                   borderRadius: AppColors.borderRadius,
                 ),
                 child: FloatingActionButton.large(
+                  shape: const BeveledRectangleBorder(
+                      borderRadius: AppColors.borderRadius,
+                      side: BorderSide(
+                          width: 3, color: AppColors.textButtonMenu)),
                   backgroundColor: AppColors.backColor,
                   onPressed: () {
                     gameRef.resumeEngine();
@@ -67,8 +70,8 @@ class PauseMenu extends StatelessWidget {
                     gameRef.overlays.add(PauseButton.id);
                   },
                   child: const Icon(
-                    Icons.play_circle,
-                    color: AppColors.frontColor,
+                    Icons.play_arrow_sharp,
+                    color: AppColors.textButtonMenu,
                   ),
                 ),
               ),
@@ -76,11 +79,15 @@ class PauseMenu extends StatelessWidget {
               // Restart button.
               Container(
                 decoration: BoxDecoration(
-                  border: Border.all(color: AppColors.buttonColor, width: 4),
+                  border: Border.all(color: Colors.transparent, width: 4),
                   borderRadius: AppColors.borderRadius,
                 ),
                 child: FloatingActionButton.large(
                   backgroundColor: AppColors.backColor,
+                  shape: const BeveledRectangleBorder(
+                      borderRadius: AppColors.borderRadius,
+                      side: BorderSide(
+                          width: 3, color: AppColors.textButtonMenu)),
                   onPressed: () {
                     gameRef.overlays.remove(PauseMenu.id);
                     gameRef.overlays.add(PauseButton.id);
@@ -88,8 +95,8 @@ class PauseMenu extends StatelessWidget {
                     gameRef.resumeEngine();
                   },
                   child: const Icon(
-                    Icons.restore,
-                    color: AppColors.frontColor,
+                    Icons.restart_alt_rounded,
+                    color: AppColors.textButtonMenu,
                   ),
                 ),
               ),
@@ -99,12 +106,15 @@ class PauseMenu extends StatelessWidget {
           // Exit button.
           Container(
             decoration: BoxDecoration(
-              border: Border.all(color: AppColors.buttonColor, width: 4),
+              border: Border.all(color: Colors.transparent, width: 4),
               borderRadius: AppColors.borderRadius,
             ),
             margin: REdgeInsets.only(top: 10),
             child: FloatingActionButton.large(
               backgroundColor: AppColors.backColor,
+              shape: const BeveledRectangleBorder(
+                  borderRadius: AppColors.borderRadius,
+                  side: BorderSide(width: 3, color: AppColors.textButtonMenu)),
               elevation: 20,
               onPressed: () {
                 gameRef.overlays.remove(PauseMenu.id);
@@ -113,13 +123,13 @@ class PauseMenu extends StatelessWidget {
 
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (context) => const GameMenu(),
+                    builder: (context) => const RogueShooterWidget(),
                   ),
                 );
               },
               child: const Icon(
-                Icons.exit_to_app,
-                color: AppColors.frontColor,
+                Icons.exit_to_app_sharp,
+                color: AppColors.textButtonMenu,
               ),
             ),
           ),

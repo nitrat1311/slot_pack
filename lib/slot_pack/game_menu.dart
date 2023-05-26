@@ -5,12 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flame/flame.dart';
+import '../../../../../slot_pack/lib/slot_pack/settings_menu.dart';
 
-import '../const_colors.dart';
-import 'game_play.dart';
+import '../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
 import 'records_tbl.dart';
-
-import 'select_spaceship.dart';
+import 'story_widget.dart';
 import 'widgets/glowing_button.dart';
 
 class GameMenu extends StatelessWidget {
@@ -74,7 +73,9 @@ class GameMenu extends StatelessWidget {
                       onTap: () {
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(
-                            builder: (context) => const SelectCharacter(),
+                            builder: (context) => const StoryScreenWidget(
+                              numberOfScreen: 1,
+                            ),
                           ),
                         );
                       },
@@ -112,7 +113,7 @@ class GameMenu extends StatelessWidget {
                       onTap: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => RecordsTbl(),
+                            builder: (context) => const RecordsTbl(),
                           ),
                         );
                       },

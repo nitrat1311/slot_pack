@@ -2,7 +2,9 @@ import 'dart:math';
 
 import 'package:flame/components.dart';
 import 'package:flame/sprite.dart';
-import 'package:pilot_legend_avia/game/components/star_component.dart';
+
+import '../../../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
+import 'star_component.dart';
 
 class StarBackGroundCreator extends Component with HasGameRef {
   final gapSize = 12;
@@ -15,7 +17,8 @@ class StarBackGroundCreator extends Component with HasGameRef {
   @override
   Future<void> onLoad() async {
     spriteSheet = SpriteSheet.fromColumnsAndRows(
-      image: await gameRef.images.load('shooter/stars.png'),
+      image: await gameRef.images
+          .load('packages/${AppColors.myPackage}/assets/images/stars.png'),
       rows: 4,
       columns: 4,
     );

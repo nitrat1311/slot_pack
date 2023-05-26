@@ -1,6 +1,8 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
-import 'package:pilot_legend_avia/game/components/enemy_component.dart';
+
+import '../../../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
+import 'enemy_component.dart';
 
 class BulletComponent extends SpriteAnimationComponent
     with HasGameRef, CollisionCallbacks {
@@ -15,7 +17,7 @@ class BulletComponent extends SpriteAnimationComponent
   Future<void> onLoad() async {
     add(CircleHitbox());
     animation = await gameRef.loadSpriteAnimation(
-      'shooter/bullet.png',
+      'packages/${AppColors.myPackage}/assets/images/bullet.png',
       SpriteAnimationData.sequenced(
         stepTime: 0.2,
         amount: 4,

@@ -1,5 +1,4 @@
-import 'package:pilot_legend_avia/game/records/bloc/records_bloc.dart';
-import 'package:pilot_legend_avia/game/shooter_game.dart';
+import '../../../../../../slot_pack/lib/slot_pack/game/shooter_game.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -17,7 +16,7 @@ class RogueShooterWidget extends StatelessWidget {
       body: WillPopScope(
         onWillPop: () async => false,
         child: GameWidget(
-          game: RogueShooterGame(recordsBloc: context.recordsBloc),
+          game: RogueShooterGame(),
           loadingBuilder: (_) => const Center(
             child: Text('Loading'),
           ),

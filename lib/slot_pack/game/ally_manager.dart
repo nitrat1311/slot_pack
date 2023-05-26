@@ -1,7 +1,9 @@
 import 'dart:math';
-import 'package:pilot_legend_avia/game/shooter_game.dart';
+
 import 'package:flame/components.dart';
-import 'package:pilot_legend_avia/game/ally.dart';
+import '../../../../../../slot_pack/lib/slot_pack/game/shooter_game.dart';
+
+import 'ally.dart';
 import 'knows_game_size.dart';
 import '../models/ally_data.dart';
 

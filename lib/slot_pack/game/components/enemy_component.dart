@@ -1,8 +1,9 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
-import 'package:pilot_legend_avia/game/components/explosion_component.dart';
 
+import '../../../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
 import '../shooter_game.dart';
+import 'explosion_component.dart';
 
 class EnemyComponent extends SpriteAnimationComponent
     with HasGameRef<RogueShooterGame>, CollisionCallbacks {
@@ -15,7 +16,7 @@ class EnemyComponent extends SpriteAnimationComponent
   @override
   Future<void> onLoad() async {
     animation = await gameRef.loadSpriteAnimation(
-      'shooter/enemy.png',
+      'packages/${AppColors.myPackage}/assets/images/enemy.png',
       SpriteAnimationData.sequenced(
         stepTime: 0.2,
         amount: 4,

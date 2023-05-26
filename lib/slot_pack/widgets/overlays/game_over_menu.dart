@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../const_colors.dart';
-import '../../game/game.dart';
+import '../../../../../../../slot_pack/lib/slot_pack/game/shooter_game.dart';
+
+import '../../../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
+import '../../game/shooter_widget.dart';
 
 import '../../game_menu.dart';
 import 'pause_button.dart';
@@ -10,7 +12,7 @@ import 'pause_button.dart';
 // This class represents the game over menu overlay.
 class GameOverMenu extends StatelessWidget {
   static const String id = 'GameOverMenu';
-  final MasksweirdGame gameRef;
+  final RogueShooterGame gameRef;
 
   const GameOverMenu({Key? key, required this.gameRef}) : super(key: key);
 
@@ -34,7 +36,7 @@ class GameOverMenu extends StatelessWidget {
                         ..style = PaintingStyle.stroke
                         ..strokeWidth = 4
                         ..color = AppColors.backColor,
-                      fontWeight: FontWeight.bold),
+                      fontWeight: FontWeight.w700),
                 ),
                 Text(
                   'Game Over',
@@ -56,10 +58,13 @@ class GameOverMenu extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               borderRadius: AppColors.borderRadius,
-              border: Border.all(color: AppColors.buttonColor, width: 4),
+              border: Border.all(color: Colors.transparent, width: 4),
             ),
             child: FloatingActionButton.large(
               backgroundColor: AppColors.backColor,
+              shape: const BeveledRectangleBorder(
+                  borderRadius: AppColors.borderRadius,
+                  side: BorderSide(width: 3, color: AppColors.textButtonMenu)),
               onPressed: () {
                 gameRef.overlays.remove(GameOverMenu.id);
                 gameRef.overlays.add(PauseButton.id);
@@ -67,8 +72,8 @@ class GameOverMenu extends StatelessWidget {
                 gameRef.resumeEngine();
               },
               child: const Icon(
-                Icons.restore,
-                color: AppColors.frontColor,
+                Icons.restart_alt_rounded,
+                color: AppColors.textButtonMenu,
               ),
             ),
           ),
@@ -77,10 +82,13 @@ class GameOverMenu extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               borderRadius: AppColors.borderRadius,
-              border: Border.all(color: AppColors.buttonColor, width: 4),
+              border: Border.all(color: Colors.transparent, width: 4),
             ),
             margin: REdgeInsets.only(top: 30),
             child: FloatingActionButton.large(
+              shape: const BeveledRectangleBorder(
+                  borderRadius: AppColors.borderRadius,
+                  side: BorderSide(width: 3, color: AppColors.textButtonMenu)),
               backgroundColor: AppColors.backColor,
               elevation: 20,
               onPressed: () {
@@ -96,7 +104,7 @@ class GameOverMenu extends StatelessWidget {
               },
               child: const Icon(
                 Icons.exit_to_app,
-                color: AppColors.frontColor,
+                color: AppColors.textButtonMenu,
               ),
             ),
           ),

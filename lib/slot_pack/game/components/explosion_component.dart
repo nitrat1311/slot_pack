@@ -1,5 +1,7 @@
 import 'package:flame/components.dart';
 
+import '../../../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
+
 class ExplosionComponent extends SpriteAnimationComponent with HasGameRef {
   ExplosionComponent({super.position})
       : super(
@@ -11,7 +13,7 @@ class ExplosionComponent extends SpriteAnimationComponent with HasGameRef {
   @override
   Future<void> onLoad() async {
     animation = await gameRef.loadSpriteAnimation(
-      'shooter/explosion.png',
+      'packages/${AppColors.myPackage}/assets/images/explosion.png',
       SpriteAnimationData.sequenced(
         stepTime: 0.1,
         amount: 6,
