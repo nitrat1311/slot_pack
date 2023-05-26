@@ -3,7 +3,7 @@ library slot_package;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:just_audio/just_audio.dart';
+import 'package:just_audio/just_audio.dart';
 
 import 'package:slot_package/const_colors.dart';
 import 'package:slot_package/slot_pack/game_menu.dart';
@@ -22,7 +22,7 @@ class _SettingsMenuState extends State<SettingsMenu> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    // var audio = AudioPlayer();
+    var audio = AudioPlayer();
     return Scaffold(
       body: Stack(children: [
         Image.asset(
@@ -99,12 +99,12 @@ class _SettingsMenuState extends State<SettingsMenu> {
                     value: value,
                     onChanged: (newValue) {
                       setState(() async {
-                        // if (value) {
-                        //   await audio.setAsset(
-                        //       'packages/${AppColors.myPackage}/assets/audio/music.mp3');
-                        //   audio.play();
-                        // }
-                        // audio.stop();
+                        if (value) {
+                          await audio.setAsset(
+                              'packages/${AppColors.myPackage}/assets/audio/music.mp3');
+                          audio.play();
+                        }
+                        audio.stop();
                         value = newValue;
                       });
                     },
