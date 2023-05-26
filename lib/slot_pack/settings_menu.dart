@@ -97,14 +97,14 @@ class _SettingsMenuState extends State<SettingsMenu> {
                       ),
                     ),
                     value: value,
-                    onChanged: (newValue) {
-                      setState(() async {
-                        if (value) {
-                          await audio.setAsset(
-                              'packages/${AppColors.myPackage}/assets/audio/music.mp3');
-                          audio.play();
-                        }
-                        audio.stop();
+                    onChanged: (newValue) async {
+                      if (value) {
+                        await audio.setAsset(
+                            'packages/${AppColors.myPackage}/assets/audio/music.mp3');
+                        audio.play();
+                      }
+                      audio.stop();
+                      setState(() {
                         value = newValue;
                       });
                     },
