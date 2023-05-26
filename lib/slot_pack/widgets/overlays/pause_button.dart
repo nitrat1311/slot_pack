@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../const_colors.dart';
+import 'package:slot_package/const_colors.dart';
 import '../../game/shooter_game.dart';
 import 'pause_menu.dart';
 

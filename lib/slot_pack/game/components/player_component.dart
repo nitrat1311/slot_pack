@@ -3,7 +3,7 @@ import 'package:flame/components.dart';
 
 import 'package:flutter/material.dart';
 
-import '../../../const_colors.dart';
+import 'package:slot_package/const_colors.dart';
 import '../ally.dart';
 import 'bullet_component.dart';
 import 'enemy_component.dart';

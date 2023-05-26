@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flame/components.dart';
 import 'package:flame/sprite.dart';
 
-import '../../../const_colors.dart';
+import 'package:slot_package/const_colors.dart';
 import 'star_component.dart';
 
 class StarBackGroundCreator extends Component with HasGameRef {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:slot_package/slot_pack/game_menu.dart';
 
-import '../../../const_colors.dart';
+import 'package:slot_package/const_colors.dart';
 import '../../game/shooter_game.dart';
 
 import '../../game/shooter_widget.dart';

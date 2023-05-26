@@ -1,6 +1,6 @@
 import 'package:flame/components.dart';
 
-import '../../../const_colors.dart';
+import 'package:slot_package/const_colors.dart';
 
 class ExplosionComponent extends SpriteAnimationComponent with HasGameRef {
   ExplosionComponent({super.position})

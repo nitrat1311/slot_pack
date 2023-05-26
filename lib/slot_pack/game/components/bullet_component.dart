@@ -1,6 +1,6 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
-import '../../../const_colors.dart';
+import 'package:slot_package/const_colors.dart';
 import 'enemy_component.dart';
 
 class BulletComponent extends SpriteAnimationComponent

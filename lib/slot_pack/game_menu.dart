@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flame/flame.dart';
 
-import '../const_colors.dart';
+import 'package:slot_package/const_colors.dart';
 import 'records_tbl.dart';
 import 'settings_menu.dart';
 import 'story_widget.dart';

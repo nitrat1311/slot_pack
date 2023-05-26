@@ -1,7 +1,7 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 
-import '../../../const_colors.dart';
+import 'package:slot_package/const_colors.dart';
 import '../shooter_game.dart';
 import 'explosion_component.dart';
 
