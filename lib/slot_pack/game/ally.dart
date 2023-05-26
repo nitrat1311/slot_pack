@@ -1,13 +1,13 @@
 import 'dart:math';
 
-import 'package:pilot_legend_avia/game/components/player_component.dart';
-import 'package:pilot_legend_avia/game/shooter_game.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 
+import 'components/player_component.dart';
 import 'knows_game_size.dart';
 
 import '../models/ally_data.dart';
+import 'shooter_game.dart';
 
 // This class represent an enemy component.
 class Ally extends SpriteComponent

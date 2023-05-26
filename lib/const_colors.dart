@@ -15,7 +15,6 @@ class AppColors {
   static const textButtonMenu = Colors.black;
   static const borderRadius =
       BorderRadius.all(Radius.circular(randomPadding * 1.9));
-  // static const neonFont = NeonFont.LasEnter;
   static const pauseAlihnment = Alignment(-randomPadding / 45, -.8);
   static const startAlihnment = Alignment(randomPadding / 45, 0.8);
   static const double scoreY = randomPadding * 10;

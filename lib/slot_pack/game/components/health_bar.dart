@@ -1,6 +1,7 @@
-import 'package:pilot_legend_avia/game/components/player_component.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
+
+import 'player_component.dart';
 
 class HealthBar extends PositionComponent {
   final PlayerComponent player;
