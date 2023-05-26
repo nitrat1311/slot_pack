@@ -1,11 +1,9 @@
+import 'package:pilot_legend_avia/game/components/player_component.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
 
-import '../../const_colors.dart';
-import 'player.dart';
-
 class HealthBar extends PositionComponent {
-  final Player player;
+  final PlayerComponent player;
 
   HealthBar({
     required this.player,
@@ -25,7 +23,7 @@ class HealthBar extends PositionComponent {
     // Draws a rectangular health bar at top right corner.
     canvas.drawRect(
       Rect.fromLTWH(-2, 5, player.health.toDouble(), 20),
-      Paint()..color = AppColors.backColor,
+      Paint()..color = Colors.red,
     );
     super.render(canvas);
   }

@@ -12,9 +12,9 @@ import 'game/game.dart';
 
 // This class represents the settings menu.
 class SettingsMenu extends StatefulWidget {
-  static const String id = 'SettingsMenu';
-  final MasksweirdGame gameRef;
-  const SettingsMenu({Key? key, required this.gameRef}) : super(key: key);
+  const SettingsMenu({
+    Key? key,
+  }) : super(key: key);
   @override
   State<SettingsMenu> createState() => _SettingsMenuState();
 }

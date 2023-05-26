@@ -1,11 +1,5 @@
-library slot_package;
-
-import 'package:flame/cache.dart';
 import 'package:flame/components.dart';
 import 'package:flame/parallax.dart';
-import 'package:flutter/material.dart';
-
-import '../../const_colors.dart';
 
 class Background extends ParallaxComponent {
   @override
@@ -22,7 +16,7 @@ class Background extends ParallaxComponent {
   }
 
   Future<ParallaxLayer> get backGroundSnow => gameRef.loadParallaxLayer(
-        MyParallaxImageData('game_back.png'),
+        ParallaxImageData('back.png'),
         fill: LayerFill.width,
         velocityMultiplier: Vector2(0.5, 0.0),
       );
@@ -41,27 +35,5 @@ class Background extends ParallaxComponent {
         baseVelocity: Vector2(0, 0),
       );
     }
-  }
-}
-
-class MyParallaxImageData extends ParallaxData {
-  final String path;
-
-  MyParallaxImageData(this.path);
-
-  @override
-  Future<ParallaxRenderer> load(
-    ImageRepeat repeat,
-    Alignment alignment,
-    LayerFill fill,
-    Images? images,
-  ) {
-    return ParallaxImage.load(
-      path,
-      repeat: repeat,
-      alignment: alignment,
-      fill: fill,
-      images: Images(prefix: 'packages/${AppColors.myPackage}/assets/images/'),
-    );
   }
 }

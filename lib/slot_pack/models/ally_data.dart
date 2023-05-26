@@ -1,3 +1,5 @@
+import 'package:flame/components.dart';
+
 /// This class represents all the details required
 /// to create an [Ally] component.
 class AllyData {
@@ -16,11 +18,15 @@ class AllyData {
   // Points gains after destroying this enemy.
   final int killPoint;
 
+  final Vector2 moveDirection;
+  final Vector2 position;
   const AllyData({
     required this.speed,
     required this.spriteId,
     required this.level,
     required this.hMove,
     required this.killPoint,
+    required this.moveDirection,
+    required this.position,
   });
 }

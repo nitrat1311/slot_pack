@@ -26,8 +26,8 @@ class GlowingButtonState extends State<GlowingButton> {
       // width: MediaQuery.of(context).size.width / 1.5,
       // height: MediaQuery.of(context).size.height / 12,
       decoration: BoxDecoration(
-        border: Border.all(color: Color.fromARGB(255, 20, 19, 19), width: 4),
-        borderRadius: BorderRadius.circular(48),
+        border: Border.all(Color.fromARGB(255, 20, 19, 19), width: 2),
+        borderRadius: BorderRadius.circular(AppColors.randomPadding - 8),
         gradient: const LinearGradient(
           colors: [
             AppColors.backColor,

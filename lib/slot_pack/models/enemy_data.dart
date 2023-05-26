@@ -15,9 +15,11 @@ class EnemyData {
 
   // Points gains after destroying this enemy.
   final int killPoint;
+  final int enemyHealth;
 
   const EnemyData({
     required this.speed,
+    required this.enemyHealth,
     required this.spriteId,
     required this.level,
     required this.hMove,

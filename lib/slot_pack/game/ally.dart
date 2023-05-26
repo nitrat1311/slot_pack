@@ -1,30 +1,22 @@
 import 'dart:math';
 
+import 'package:pilot_legend_avia/game/components/player_component.dart';
+import 'package:pilot_legend_avia/game/shooter_game.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
-import 'package:flame/input.dart';
-import '../game/bullet.dart';
+
+import 'knows_game_size.dart';
 
 import '../models/ally_data.dart';
-import 'game.dart';
-import 'player.dart';
-import 'command.dart';
-import 'knows_game_size.dart';
-import 'audio_player_component.dart';
 
 // This class represent an enemy component.
 class Ally extends SpriteComponent
-    with
-        KnowsGameSize,
-        CollisionCallbacks,
-        // Tappable,
-        HasGameRef<MasksweirdGame> {
+    with KnowsGameSize, CollisionCallbacks, HasGameRef<RogueShooterGame> {
   // The speed of this enemy.
   double _speed = 250;
 
   // This direction in which this Enemy will move.
   // Defaults to vertically downwards.
-  // Vector2 moveDirection = Vector2(1, 0);
 
   // Holds an object of Random class to generate random numbers.
   final _random = Random();
@@ -40,11 +32,11 @@ class Ally extends SpriteComponent
   }
 
   Ally({
-    required Sprite? sprite,
+    Sprite? sprite,
     required this.allyData,
     required Vector2? position,
     required Vector2? size,
-  }) : super(sprite: sprite, position: position, size: size) {
+  }) : super(sprite: sprite, position: allyData.position, size: size) {
     // Rotates the enemy component by 180 degrees. This is needed because
     // all the sprites initially face the same direct, but we want enemies to be
     // moving in opposite direction.
@@ -58,34 +50,33 @@ class Ally extends SpriteComponent
   }
 
   @override
-  void onMount() {
-    super.onMount();
-
-    // Adding a circular hitbox with radius as 0.8 times
-    // the smallest dimension of this components size.
-    final shape = CircleHitbox.relative(
-      0.8,
-      parentSize: size,
-      position: size / 2,
-      anchor: Anchor.center,
+  Future<void> onLoad() async {
+    add(CircleHitbox());
+    sprite = await gameRef.loadSprite(
+      'ally.png',
     );
-    add(shape);
   }
-
   // @override
-  // bool onTapDown(TapDownInfo info) {
-  //   kiss();
-  //   gameRef.resetAlly();
-  //   return super.onTapDown(info);
-  // }
+  // void onMount() {
+  //   super.onMount();
 
+  //   // Adding a circular hitbox with radius as 0.8 times
+  //   // the smallest dimension of this components size.
+  //   final shape = CircleHitbox.relative(
+  //     0.8,
+  //     parentSize: size,
+  //     position: size / 2,
+  //     anchor: Anchor.center,
+  //   );
+  //   add(shape);
+  // }
   @override
   void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
     super.onCollision(intersectionPoints, other);
 
-    if (other is Bullet) {
+    if (other is PlayerComponent) {
       // If the other Collidable is Player, destroy.
-      // kiss();
+      kiss();
       // gameRef.resetAlly();
     }
   }
@@ -100,12 +91,11 @@ class Ally extends SpriteComponent
     removeFromParent();
     // Before dying, register a command to increase
     // player's score by 1.
-    final command = Command<Player>(action: (player) {
-      // Use the correct killPoint to increase player's score.
-
-      player.addToScore(allyData.killPoint * 10);
-    });
-    gameRef.addCommand(command);
+    // final command = Command<PlayerComponent>(action: (player) {
+    //   // Use the correct killPoint to increase player's score.
+    //   // player.increaseHealthBy(10);
+    // });
+    // gameRef.addCommand(command);
   }
 
   @override
@@ -113,8 +103,8 @@ class Ally extends SpriteComponent
     super.update(dt);
 
     // Update the position of this enemy using its speed and delta time.
-    // position += moveDirection * _speed * dt;
-    // angle = angle + 0.1;
+    position += allyData.moveDirection * _speed * dt;
+    angle = angle + 0.1;
     // position.clamp(
     //   Vector2.zero() + size / 2,
     //   gameRef.size - size / 2,
@@ -122,7 +112,7 @@ class Ally extends SpriteComponent
     // If the enemy leaves the screen, destroy it.
     if (position.x > gameRef.size.x) {
       removeFromParent();
-      gameRef.resetAlly();
+      // gameRef.resetAlly();
     }
     if (position.y > gameRef.size.y) {
       removeFromParent();
