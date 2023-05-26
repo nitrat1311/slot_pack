@@ -1,7 +1,7 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 
-import '../../../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
+import '../../../const_colors.dart';
 import '../shooter_game.dart';
 import 'explosion_component.dart';
 
@@ -15,6 +15,7 @@ class EnemyComponent extends SpriteAnimationComponent
 
   @override
   Future<void> onLoad() async {
+    gameRef.images.prefix = '';
     animation = await gameRef.loadSpriteAnimation(
       'packages/${AppColors.myPackage}/assets/images/enemy.png',
       SpriteAnimationData.sequenced(

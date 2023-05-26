@@ -3,7 +3,7 @@ import 'package:flame/components.dart';
 
 import 'package:flutter/material.dart';
 
-import '../../../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
+import '../../../const_colors.dart';
 import '../ally.dart';
 import 'bullet_component.dart';
 import 'enemy_component.dart';
@@ -53,6 +53,7 @@ class PlayerComponent extends SpriteAnimationComponent
         onTick: _createBullet,
       ),
     );
+    gameRef.images.prefix = '';
     animation = await gameRef.loadSpriteAnimation(
       'packages/${AppColors.myPackage}/assets/images/player.png',
       SpriteAnimationData.sequenced(

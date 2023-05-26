@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flame/components.dart';
 import 'package:flame/sprite.dart';
 
-import '../../../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
+import '../../../const_colors.dart';
 import 'star_component.dart';
 
 class StarBackGroundCreator extends Component with HasGameRef {
@@ -16,6 +16,7 @@ class StarBackGroundCreator extends Component with HasGameRef {
 
   @override
   Future<void> onLoad() async {
+    gameRef.images.prefix = '';
     spriteSheet = SpriteSheet.fromColumnsAndRows(
       image: await gameRef.images
           .load('packages/${AppColors.myPackage}/assets/images/stars.png'),

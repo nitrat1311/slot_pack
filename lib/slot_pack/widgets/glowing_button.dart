@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
+import '../../const_colors.dart';
 
 class GlowingButton extends StatefulWidget {
   final Widget child;

@@ -2,7 +2,7 @@ library slot_package;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
+import '../const_colors.dart';
 import 'game_menu.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';

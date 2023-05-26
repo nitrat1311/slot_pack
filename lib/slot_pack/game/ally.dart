@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 
+import '../../const_colors.dart';
 import 'components/player_component.dart';
 import 'knows_game_size.dart';
 
@@ -51,9 +52,10 @@ class Ally extends SpriteComponent
 
   @override
   Future<void> onLoad() async {
+    gameRef.images.prefix = '';
     add(CircleHitbox());
     sprite = await gameRef.loadSprite(
-      'ally.png',
+      'packages/${AppColors.myPackage}/assets/images/ally.png',
     );
   }
   // @override

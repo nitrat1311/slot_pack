@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../../../slot_pack/lib/slot_pack/game/shooter_game.dart';
-
-import '../../../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
+import '../../../const_colors.dart';
+import '../../game/shooter_game.dart';
 import '../../game/shooter_widget.dart';
 
 import '../../game_menu.dart';

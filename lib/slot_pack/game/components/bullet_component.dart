@@ -1,7 +1,6 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
-
-import '../../../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
+import '../../../const_colors.dart';
 import 'enemy_component.dart';
 
 class BulletComponent extends SpriteAnimationComponent
@@ -16,6 +15,7 @@ class BulletComponent extends SpriteAnimationComponent
   @override
   Future<void> onLoad() async {
     add(CircleHitbox());
+    gameRef.images.prefix = '';
     animation = await gameRef.loadSpriteAnimation(
       'packages/${AppColors.myPackage}/assets/images/bullet.png',
       SpriteAnimationData.sequenced(

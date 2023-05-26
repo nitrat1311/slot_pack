@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:slot_package/slot_pack/game_menu.dart';
 
-import '../../../../../test_of_pack/lib/slot_package/lib/const_colors.dart';
+import '../../../const_colors.dart';
 import '../../game/shooter_game.dart';
 
 import '../../game/shooter_widget.dart';
@@ -118,12 +119,13 @@ class PauseMenu extends StatelessWidget {
               elevation: 20,
               onPressed: () {
                 gameRef.overlays.remove(PauseMenu.id);
-                gameRef.reset();
-                gameRef.resumeEngine();
+                // gameRef.overlays.remove(PauseMenu.id);
+                gameRef.removeFromParent();
+                gameRef.pauseEngine();
 
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
-                    builder: (context) => const RogueShooterWidget(),
+                    builder: (context) => const GameMenu(),
                   ),
                 );
               },
