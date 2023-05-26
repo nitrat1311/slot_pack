@@ -1,3 +1,5 @@
+library slot_package;
+
 import 'package:flame/components.dart';
 
 import 'package:slot_package/const_colors.dart';

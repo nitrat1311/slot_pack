@@ -1,3 +1,5 @@
+library slot_package;
+
 import 'package:flame/components.dart';
 
 class StarComponent extends SpriteAnimationComponent with HasGameRef {

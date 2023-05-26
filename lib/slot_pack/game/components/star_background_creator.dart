@@ -1,3 +1,5 @@
+library slot_package;
+
 import 'dart:math';
 
 import 'package:flame/components.dart';

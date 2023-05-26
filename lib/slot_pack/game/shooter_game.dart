@@ -1,3 +1,5 @@
+library slot_package;
+
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';

@@ -1,3 +1,5 @@
+library slot_package;
+
 /// This class represents all the details required
 /// to create an [Enemy] component.
 class EnemyData {

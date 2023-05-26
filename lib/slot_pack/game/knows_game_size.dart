@@ -1,3 +1,4 @@
+library slot_package;
 // IMPORTANT NOTE
 // This class is obsolete since Flame v1.2.0 version
 // This code remains as is as a reference for the YouTube tutorial.

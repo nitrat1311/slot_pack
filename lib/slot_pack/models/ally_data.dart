@@ -1,3 +1,5 @@
+library slot_package;
+
 import 'package:flame/components.dart';
 
 /// This class represents all the details required

@@ -1,3 +1,5 @@
+library slot_package;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:slot_package/slot_pack/game_menu.dart';
