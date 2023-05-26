@@ -4,9 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:slot_package/const_colors.dart';
 
-import 'game_menu.dart';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:slot_package/slot_pack/game_menu.dart';
 
 class RecordsTbl extends StatelessWidget {
   static List records = [7, 50, 80];

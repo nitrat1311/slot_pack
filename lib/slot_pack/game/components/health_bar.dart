@@ -2,8 +2,7 @@ library slot_package;
 
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
-
-import 'player_component.dart';
+import 'package:slot_package/slot_pack/game/components/player_component.dart';
 
 class HealthBar extends PositionComponent {
   final PlayerComponent player;

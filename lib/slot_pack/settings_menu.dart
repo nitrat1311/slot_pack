@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:just_audio/just_audio.dart';
 
 import 'package:slot_package/const_colors.dart';
-import 'game_menu.dart';
+import 'package:slot_package/slot_pack/game_menu.dart';
 
 // This class represents the settings menu.
 class SettingsMenu extends StatefulWidget {

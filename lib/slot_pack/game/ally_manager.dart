@@ -3,11 +3,10 @@ library slot_package;
 import 'dart:math';
 
 import 'package:flame/components.dart';
-
-import 'ally.dart';
-import 'knows_game_size.dart';
-import '../models/ally_data.dart';
-import 'shooter_game.dart';
+import 'package:slot_package/slot_pack/game/ally.dart';
+import 'package:slot_package/slot_pack/game/knows_game_size.dart';
+import 'package:slot_package/slot_pack/game/shooter_game.dart';
+import 'package:slot_package/slot_pack/models/ally_data.dart';
 
 // This component class takes care of spawning new enemy components
 // randomly from top of the screen. It uses the HasGameRef mixin so that

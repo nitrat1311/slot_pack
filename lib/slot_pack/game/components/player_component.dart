@@ -6,10 +6,10 @@ import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
 
 import 'package:slot_package/const_colors.dart';
-import '../ally.dart';
-import 'bullet_component.dart';
-import 'enemy_component.dart';
-import 'explosion_component.dart';
+import 'package:slot_package/slot_pack/game/ally.dart';
+import 'package:slot_package/slot_pack/game/components/bullet_component.dart';
+import 'package:slot_package/slot_pack/game/components/enemy_component.dart';
+import 'package:slot_package/slot_pack/game/components/explosion_component.dart';
 
 class PlayerComponent extends SpriteAnimationComponent
     with HasGameRef, CollisionCallbacks {

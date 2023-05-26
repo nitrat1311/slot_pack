@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:slot_package/const_colors.dart';
-import '../../game/shooter_game.dart';
-import 'pause_menu.dart';
+import 'package:slot_package/slot_pack/game/shooter_game.dart';
+import 'package:slot_package/slot_pack/widgets/overlays/pause_menu.dart';
 
 // This class represents the pause button overlay.
 class PauseButton extends StatelessWidget {

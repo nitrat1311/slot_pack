@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:slot_package/const_colors.dart';
-import 'game/shooter_widget.dart';
+import 'package:slot_package/slot_pack/game/shooter_widget.dart';
 
 class StoryScreenWidget extends StatefulWidget {
   final int numberOfScreen;

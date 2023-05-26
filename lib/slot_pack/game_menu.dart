@@ -5,12 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flame/flame.dart';
-
 import 'package:slot_package/const_colors.dart';
-import 'records_tbl.dart';
-import 'settings_menu.dart';
-import 'story_widget.dart';
-import 'widgets/glowing_button.dart';
+import 'package:slot_package/slot_pack/records_tbl.dart';
+import 'package:slot_package/slot_pack/settings_menu.dart';
+import 'package:slot_package/slot_pack/story_widget.dart';
+import 'package:slot_package/slot_pack/widgets/glowing_button.dart';
 
 class GameMenu extends StatelessWidget {
   const GameMenu({Key? key}) : super(key: key);

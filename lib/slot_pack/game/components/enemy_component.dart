@@ -4,8 +4,8 @@ import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 
 import 'package:slot_package/const_colors.dart';
-import '../shooter_game.dart';
-import 'explosion_component.dart';
+import 'package:slot_package/slot_pack/game/components/explosion_component.dart';
+import 'package:slot_package/slot_pack/game/shooter_game.dart';
 
 class EnemyComponent extends SpriteAnimationComponent
     with HasGameRef<RogueShooterGame>, CollisionCallbacks {

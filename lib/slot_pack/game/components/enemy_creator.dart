@@ -3,8 +3,7 @@ library slot_package;
 import 'dart:math';
 
 import 'package:flame/components.dart';
-
-import 'enemy_component.dart';
+import 'package:slot_package/slot_pack/game/components/enemy_component.dart';
 
 class EnemyCreator extends TimerComponent with HasGameRef {
   final Random random = Random();

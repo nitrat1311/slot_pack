@@ -3,7 +3,7 @@ library slot_package;
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:slot_package/const_colors.dart';
-import 'enemy_component.dart';
+import 'package:slot_package/slot_pack/game/components/enemy_component.dart';
 
 class BulletComponent extends SpriteAnimationComponent
     with HasGameRef, CollisionCallbacks {

@@ -3,15 +3,14 @@ library slot_package;
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';
-
-import '../widgets/overlays/game_over_menu.dart';
-import '../widgets/overlays/pause_button.dart';
-import 'ally_manager.dart';
-import 'components/enemy_component.dart';
-import 'components/enemy_creator.dart';
-import 'components/health_bar.dart';
-import 'components/player_component.dart';
-import 'components/star_background_creator.dart';
+import 'package:slot_package/slot_pack/game/ally_manager.dart';
+import 'package:slot_package/slot_pack/game/components/enemy_component.dart';
+import 'package:slot_package/slot_pack/game/components/enemy_creator.dart';
+import 'package:slot_package/slot_pack/game/components/health_bar.dart';
+import 'package:slot_package/slot_pack/game/components/player_component.dart';
+import 'package:slot_package/slot_pack/game/components/star_background_creator.dart';
+import 'package:slot_package/slot_pack/widgets/overlays/game_over_menu.dart';
+import 'package:slot_package/slot_pack/widgets/overlays/pause_button.dart';
 
 class RogueShooterGame extends FlameGame
     with PanDetector, HasCollisionDetection {
