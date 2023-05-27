@@ -50,7 +50,7 @@ class GameMenu extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           background: Paint()
-                            ..color = AppColors.buttonColor.withOpacity(0.3),
+                            ..color = AppColors.buttonColor.withOpacity(0.8),
                           foreground: Paint()..color = AppColors.frontColor,
                           fontSize: 50,
                           fontWeight: FontWeight.normal,
@@ -64,7 +64,7 @@ class GameMenu extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 40.h,
+                    height: AppColors.randomPadding.h,
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
@@ -87,6 +87,9 @@ class GameMenu extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(
+                    height: 5.h + AppColors.randomPadding,
+                  ),
                   Align(
                     alignment: Alignment.centerRight,
                     child: GestureDetector(
@@ -105,6 +108,9 @@ class GameMenu extends StatelessWidget {
                         ),
                       ),
                     ),
+                  ),
+                  SizedBox(
+                    height: 5.h + AppColors.randomPadding,
                   ),
                   Align(
                     alignment: Alignment.center,
@@ -125,7 +131,6 @@ class GameMenu extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20.h)
                 ],
               ),
             ),
