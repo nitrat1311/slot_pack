@@ -42,7 +42,7 @@ class GameMenu extends StatelessWidget {
               child: Column(
                 children: [
                   Padding(
-                    padding: REdgeInsets.fromLTRB(0, 29, 0, 0),
+                    padding: REdgeInsets.only(top: AppColors.randomPadding),
                     child: AutoSizeText(
                       AppColors.appLable,
                       wrapWords: false,
@@ -51,14 +51,14 @@ class GameMenu extends StatelessWidget {
                       style: TextStyle(
                           background: Paint()
                             ..color = AppColors.buttonColor.withOpacity(0.8),
-                          foreground: Paint()..color = AppColors.frontColor,
+                          foreground: Paint()..color = AppColors.buttonColor,
                           fontSize: 50,
                           fontWeight: FontWeight.normal,
                           shadows: const [
                             Shadow(
                               offset: Offset(3, 3.0),
                               blurRadius: 8,
-                              color: AppColors.backColor,
+                              color: AppColors.textButtonMenu,
                             ),
                           ]),
                     ),
@@ -88,7 +88,7 @@ class GameMenu extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 5.h + AppColors.randomPadding,
+                    height: -5.h + AppColors.randomPadding,
                   ),
                   Align(
                     alignment: Alignment.centerRight,
@@ -110,7 +110,7 @@ class GameMenu extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 5.h + AppColors.randomPadding,
+                    height: -5.h + AppColors.randomPadding,
                   ),
                   Align(
                     alignment: Alignment.center,
