@@ -7,11 +7,12 @@ class AppColors {
   static const appLable = 'Soccer Start';
   static const myPackage = 'slot_package';
   static const glowingDuration = Duration(milliseconds: 4500);
-  static const backColor = Color.fromRGBO(246, 68, 72, 1); //any colors
-  static const frontColor = Color.fromRGBO(0, 150, 150, 1); //any colors
-  static const buttonColor = Colors.teal; //[Colors. red,pink,purple,deepPurple,
+  static const backColor = Color.fromRGBO(153, 218, 188, 1); //any colors
+  static const frontColor = Color.fromRGBO(247, 0, 53, 1); //any colors
+  static const buttonColor =
+      Colors.lightGreen; //[Colors. red,pink,purple,deepPurple,
   //indigo,blue,lightBlue,cyan,teal,green,lightGreen,lime,yellow,amber,orange,deepOrange,brown,blueGrey]
-  static const double randomPadding = 37.5; //20-40 limit
+  static const double randomPadding = 27.5; //20-40 limit
   static const textButtonMenu = Colors.black;
   static const borderRadius = BorderRadius.all(
       Radius.elliptical(randomPadding * 1.9, randomPadding - 10));
