@@ -44,7 +44,8 @@ class GameMenu extends StatelessWidget {
               child: Column(
                 children: [
                   Padding(
-                    padding: REdgeInsets.fromLTRB(0, 29, 0, 0),
+                    padding:
+                        REdgeInsets.fromLTRB(0, AppColors.randomPadding, 0, 0),
                     child: AutoSizeText(
                       AppColors.appLable,
                       wrapWords: false,
@@ -66,7 +67,7 @@ class GameMenu extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 40.h,
+                    height: AppColors.randomPadding - 20.h,
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
@@ -80,7 +81,7 @@ class GameMenu extends StatelessWidget {
                       },
                       child: GlowingButton(
                         child: Text(
-                          'new game',
+                          'start game',
                           style: TextStyle(
                               color: AppColors.textButtonMenu, fontSize: 30.sp),
                         ),
@@ -107,7 +108,8 @@ class GameMenu extends StatelessWidget {
                     ),
                   ),
                   Align(
-                    alignment: Alignment.center,
+                    alignment:
+                        const Alignment(AppColors.randomPadding / 100, -0.8),
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -118,14 +120,13 @@ class GameMenu extends StatelessWidget {
                       },
                       child: GlowingButton(
                         child: Text(
-                          'records',
+                          'my records',
                           style: TextStyle(
                               color: AppColors.textButtonMenu, fontSize: 30.sp),
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(height: 20.h)
                 ],
               ),
             ),

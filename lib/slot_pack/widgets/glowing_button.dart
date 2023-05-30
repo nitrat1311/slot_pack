@@ -22,12 +22,14 @@ class GlowingButtonState extends State<GlowingButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: REdgeInsets.symmetric(vertical: 2),
+      margin: REdgeInsets.symmetric(vertical: AppColors.randomPadding / 10),
       // width: MediaQuery.of(context).size.width / 1.5,
       // height: MediaQuery.of(context).size.height / 12,
       decoration: BoxDecoration(
-        border: Border.all(color: Color.fromARGB(255, 20, 19, 19), width: 4),
-        borderRadius: BorderRadius.circular(48),
+        border:
+            Border.all(color: const Color.fromARGB(255, 20, 19, 19), width: 4),
+        borderRadius:
+            const BorderRadius.horizontal(left: Radius.elliptical(10, 50)),
         gradient: const LinearGradient(
           colors: [
             AppColors.backColor,

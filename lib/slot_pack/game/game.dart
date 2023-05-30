@@ -112,7 +112,7 @@ class MasksweirdGame extends FlameGame
         image: images.fromCache('animation_right.png'),
         columns: 4,
         rows: 1,
-      ).createAnimation(from: 0, to: 4, row: 0, stepTime: 0.08, loop: false);
+      ).createAnimation(from: 0, to: 4, row: 0, stepTime: 0.2, loop: false);
       fire = SpriteSheet.fromColumnsAndRows(
         image: images.fromCache('animation_fire.png'),
         columns: 6,
@@ -126,7 +126,7 @@ class MasksweirdGame extends FlameGame
           radius: 50,
           paint: Paint()..color = AppColors.buttonColor.withOpacity(0.5),
         ),
-        knob: CircleComponent(radius: 30),
+        knob: CircleComponent(radius: 28),
       );
       add(joystick);
       player = Player(
@@ -139,8 +139,10 @@ class MasksweirdGame extends FlameGame
       // Makes sure that the sprite is centered.
       player.anchor = Anchor.center;
       add(player);
-      _healthBar =
-          HealthBar(player: player, position: Vector2(size.x - 150, 55));
+      _healthBar = HealthBar(
+          player: player,
+          position: Vector2(
+              size.x - AppColors.randomPadding * 2, AppColors.randomPadding));
       add(_healthBar);
       _enemyManager = EnemyManager(spriteSheet: fire);
       // _allyManager = AllyManager(sprite: sprite);
@@ -158,7 +160,8 @@ class MasksweirdGame extends FlameGame
       add(button);
       // Create text component for player score.
       _playerScore = TextComponent(
-        position: Vector2(size.x / 2 - 150, 30),
+        position: Vector2(size.x / 2 - AppColors.randomPadding * 2.5,
+            AppColors.randomPadding),
         textRenderer: TextPaint(
           style: const TextStyle(
               letterSpacing: 5,
@@ -169,7 +172,8 @@ class MasksweirdGame extends FlameGame
         ),
       );
       _playerScore2 = TextComponent(
-        position: Vector2(size.x / 2 - 150, 28),
+        position: Vector2(size.x / 2 - AppColors.randomPadding * 2.5,
+            AppColors.randomPadding - 2),
         textRenderer: TextPaint(
             style: TextStyle(
                 letterSpacing: 5,
@@ -193,7 +197,8 @@ class MasksweirdGame extends FlameGame
 
       // Create text component for player health.
       _playerHealth = TextComponent(
-        position: Vector2(size.x - 48, 30),
+        position: Vector2(
+            size.x - AppColors.randomPadding - 2, AppColors.randomPadding),
         textRenderer: TextPaint(
           style: const TextStyle(
               letterSpacing: 5,
@@ -204,7 +209,8 @@ class MasksweirdGame extends FlameGame
         ),
       );
       _playerHealth2 = TextComponent(
-        position: Vector2(size.x - 50, 28),
+        position: Vector2(
+            size.x - AppColors.randomPadding, AppColors.randomPadding - 2),
         textRenderer: TextPaint(
           style: TextStyle(
               letterSpacing: 5,
