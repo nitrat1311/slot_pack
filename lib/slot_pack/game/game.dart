@@ -141,8 +141,7 @@ class MasksweirdGame extends FlameGame
       add(player);
       _healthBar = HealthBar(
           player: player,
-          position: Vector2(
-              size.x - AppColors.randomPadding * 2, AppColors.randomPadding));
+          position: Vector2(size.x - 150, AppColors.randomPadding * 1.5));
       add(_healthBar);
       _enemyManager = EnemyManager(spriteSheet: fire);
       // _allyManager = AllyManager(sprite: sprite);
