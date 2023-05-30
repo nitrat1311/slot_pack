@@ -67,7 +67,7 @@ class GameMenu extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: AppColors.randomPadding - 20.h,
+                    height: AppColors.randomPadding + 20.h,
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
