@@ -49,7 +49,11 @@ class RecordsTable extends StatelessWidget {
                           ]),
                     ),
                   ),
-                  const Center(child: Text('Player Score : 250')),
+                  const Center(
+                      child: Text(
+                    'Player Best Score : 250',
+                    style: TextStyle(color: AppColors.textColorInsideGame),
+                  )),
                   SizedBox(height: 30.h),
                   Container(
                     decoration: BoxDecoration(
