@@ -80,7 +80,7 @@ class _PauseButtonState extends State<PauseButton> {
         ),
       ),
       Align(
-        alignment: const Alignment(0.02, 0.38),
+        alignment: const Alignment(0.02, 0.0),
         child: SlotMachine(
           shuffle: true,
           multiplyNumberOfSlotItems: 4,
