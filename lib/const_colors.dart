@@ -4,12 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:neon/neon.dart';
 
 class AppColors {
-  static const appLable = 'Lucky Tear';
+  static const appLable = 'Casino';
   static const myPackage = 'slot_package';
   static const glowingDuration = Duration(milliseconds: 4500);
-  static const backColor = Color.fromRGBO(230, 187, 33, 1); //any colors
-  static const frontColor = Color.fromRGBO(4, 4, 208, 1); //any colors
-  static const buttonColor = Colors.blue; //[Colors. red,pink,purple,deepPurple,
+  static const backColor = Color.fromRGBO(209, 176, 99, 1); //any colors
+  static const frontColor = Color.fromRGBO(53, 174, 88, 1); //any colors
+  static const buttonColor =
+      Colors.lightGreen; //[Colors. red,pink,purple,deepPurple,
   //indigo,blue,lightBlue,cyan,teal,green,lightGreen,lime,yellow,amber,orange,deepOrange,brown,blueGrey]
   static const double randomPadding = 37.5; //20-40 limit
   static const textButtonMenu = Colors.black;
