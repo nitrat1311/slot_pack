@@ -45,7 +45,7 @@ class SelectCharacter extends StatelessWidget {
                     );
                   },
                   child: const Icon(
-                    Icons.circle,
+                    Icons.surfing,
                     color: AppColors.backColor,
                   ),
                 ),

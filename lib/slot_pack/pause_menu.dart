@@ -31,6 +31,7 @@ class PauseMenu extends StatelessWidget {
                   style: TextStyle(
                       fontSize: 50.sp,
                       letterSpacing: 5.0,
+                      background: Paint()..color = AppColors.buttonColor,
                       foreground: Paint()
                         ..style = PaintingStyle.stroke
                         ..strokeWidth = 4
