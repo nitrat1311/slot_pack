@@ -109,7 +109,8 @@ class MasksweirdGame extends FlameGame
       add(player);
 
       _playerScore = TextComponent(
-        position: Vector2(size.x / 2, AppColors.scoreY.toDouble() / 2 - 30),
+        position:
+            Vector2(size.x / 2 - 10, AppColors.scoreY.toDouble() / 2 - 40),
         textRenderer: TextPaint(
           style: TextStyle(
               letterSpacing: 5,
@@ -124,7 +125,8 @@ class MasksweirdGame extends FlameGame
         ),
       );
       _playerScore2 = TextComponent(
-        position: Vector2((size.x / 2), AppColors.scoreY.toDouble() / 2 - 32),
+        position:
+            Vector2((size.x / 2 - 12), AppColors.scoreY.toDouble() / 2 - 42),
         textRenderer: TextPaint(
             style: TextStyle(
                 letterSpacing: 5,
@@ -134,7 +136,7 @@ class MasksweirdGame extends FlameGame
                 foreground: Paint()
                   ..style = PaintingStyle.fill
                   ..strokeWidth = 1
-                  ..color = AppColors.frontColor,
+                  ..color = Colors.white,
                 fontWeight: FontWeight.normal)),
       );
       // Setting positionType to viewport makes sure that this component
