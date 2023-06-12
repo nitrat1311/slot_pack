@@ -109,14 +109,14 @@ class MasksweirdGame extends FlameGame
       add(player);
 
       _playerScore = TextComponent(
-        position: Vector2((size.x * AppColors.scoreX1) - AppColors.scoreX2,
+        position: Vector2((size.x * AppColors.scoreX1) - 3 * AppColors.scoreX2,
             AppColors.scoreY.toDouble()),
         textRenderer: TextPaint(
           style: TextStyle(
               letterSpacing: 5,
               fontFamily: 'Delicious',
               fontSize: 40,
-              background: Paint()..color = AppColors.backColor.withOpacity(0.8),
+              fontStyle: FontStyle.italic,
               foreground: Paint()
                 ..style = PaintingStyle.fill
                 ..strokeWidth = 1
@@ -125,14 +125,15 @@ class MasksweirdGame extends FlameGame
         ),
       );
       _playerScore2 = TextComponent(
-        position: Vector2((size.x * AppColors.scoreX1) - AppColors.scoreX2 - 2,
+        position: Vector2(
+            (size.x * AppColors.scoreX1) - 3 * AppColors.scoreX2 - 2,
             AppColors.scoreY.toDouble() - 2),
         textRenderer: TextPaint(
             style: TextStyle(
                 letterSpacing: 5,
                 fontFamily: 'Delicious',
                 fontSize: 40,
-                fontStyle: FontStyle.normal,
+                fontStyle: FontStyle.italic,
                 foreground: Paint()
                   ..style = PaintingStyle.fill
                   ..strokeWidth = 1
@@ -173,8 +174,8 @@ class MasksweirdGame extends FlameGame
 
     if (player.isMounted) {
       // Update score and health components with latest values.
-      _playerScore.text = 'Score: ${player.score + 50}';
-      _playerScore2.text = 'Score: ${player.score + 50}';
+      _playerScore.text = '${player.score + 50}';
+      _playerScore2.text = '${player.score + 50}';
 
       /// Display [GameOverMenu] when [Player.health] becomes
       /// zero and camera stops shaking.
