@@ -30,8 +30,7 @@ class PauseMenu extends StatelessWidget {
                   'Paused',
                   style: TextStyle(
                       fontSize: 50.sp,
-                      letterSpacing: 5.0,
-                      background: Paint()..color = AppColors.buttonColor,
+                      letterSpacing: 7.0,
                       foreground: Paint()
                         ..style = PaintingStyle.stroke
                         ..strokeWidth = 4
@@ -42,11 +41,11 @@ class PauseMenu extends StatelessWidget {
                   'Paused',
                   style: TextStyle(
                       fontSize: 50.sp,
-                      letterSpacing: 5.0,
+                      letterSpacing: 7.0,
                       foreground: Paint()
                         ..style = PaintingStyle.fill
                         ..strokeWidth = 1
-                        ..color = AppColors.backColor,
+                        ..color = Colors.white,
                       fontWeight: FontWeight.bold),
                 ),
               ]),
