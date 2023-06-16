@@ -1,13 +1,11 @@
 import 'package:flame/game.dart';
 import 'package:flame/input.dart';
-import 'package:flame/parallax.dart';
 import 'package:flame/sprite.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
 
-import '../../const_colors.dart';
+import 'package:slot_package/const_colors.dart';
 import '../game/ally.dart';
-import '../game/ally_manager.dart';
 
 import '../game/background.dart';
 
@@ -50,9 +48,6 @@ class MasksweirdGame extends FlameGame
   late TextComponent _playerScore;
   late TextComponent _playerScore2;
 
-  // Displays player helth on top right.
-  late TextComponent _playerHealth;
-  late TextComponent _playerHealth2;
   late PositionComponent _healthBar;
 
   late final Background _background;
@@ -141,7 +136,7 @@ class MasksweirdGame extends FlameGame
       add(player);
       _healthBar = HealthBar(
           player: player,
-          position: Vector2(size.x - 150, AppColors.randomPadding * 1.5));
+          position: Vector2(size.y * 0.045, size.y / 2 + size.y * 0.1));
       add(_healthBar);
       _enemyManager = EnemyManager(spriteSheet: fire);
       // _allyManager = AllyManager(sprite: sprite);
@@ -159,8 +154,7 @@ class MasksweirdGame extends FlameGame
       add(button);
       // Create text component for player score.
       _playerScore = TextComponent(
-        position: Vector2(size.x / 2 - AppColors.randomPadding * 2.5,
-            AppColors.randomPadding),
+        position: Vector2(size.x - size.x * 0.35, size.y / 2 + size.y * 0.15),
         textRenderer: TextPaint(
           style: const TextStyle(
               letterSpacing: 5,
@@ -171,8 +165,8 @@ class MasksweirdGame extends FlameGame
         ),
       );
       _playerScore2 = TextComponent(
-        position: Vector2(size.x / 2 - AppColors.randomPadding * 2.5,
-            AppColors.randomPadding - 2),
+        position:
+            Vector2(size.x - size.x * 0.35, size.y / 2 + size.y * 0.15 - 2),
         textRenderer: TextPaint(
             style: TextStyle(
                 letterSpacing: 5,
@@ -194,48 +188,7 @@ class MasksweirdGame extends FlameGame
       add(_playerScore);
       add(_playerScore2);
 
-      // Create text component for player health.
-      _playerHealth = TextComponent(
-        position: Vector2(
-            size.x - AppColors.randomPadding - 2, AppColors.randomPadding),
-        textRenderer: TextPaint(
-          style: const TextStyle(
-              letterSpacing: 5,
-              fontFamily: 'LibreBaskerville',
-              fontSize: 22,
-              color: Colors.black,
-              fontWeight: FontWeight.normal),
-        ),
-      );
-      _playerHealth2 = TextComponent(
-        position: Vector2(
-            size.x - AppColors.randomPadding, AppColors.randomPadding - 2),
-        textRenderer: TextPaint(
-          style: TextStyle(
-              letterSpacing: 5,
-              fontFamily: 'LibreBaskerville',
-              fontSize: 22,
-              foreground: Paint()
-                ..style = PaintingStyle.fill
-                ..strokeWidth = 1
-                ..color = AppColors.frontColor,
-              fontWeight: FontWeight.normal),
-        ),
-      );
-
-      // Anchor to top right as we want the top right
-      // corner of this component to be at a specific position.
-      _playerHealth.anchor = Anchor.topRight;
-      _playerHealth2.anchor = Anchor.topRight;
       _healthBar.anchor = Anchor.center;
-
-      // // Setting positionType to viewport makes sure that this component
-      // // does not get affected by camera's transformations.
-      _playerHealth.positionType = PositionType.viewport;
-      _playerHealth2.positionType = PositionType.viewport;
-
-      add(_playerHealth);
-      add(_playerHealth2);
 
       // Set this to true so that we do not initilize
       // everything again in the same session.
@@ -289,8 +242,6 @@ class MasksweirdGame extends FlameGame
       // Update score and health components with latest values.
       _playerScore.text = 'Score: ${player.score}';
       _playerScore2.text = 'Score: ${player.score}';
-      _playerHealth.text = 'Health';
-      _playerHealth2.text = 'Health';
 
       /// Display [GameOverMenu] when [Player.health] becomes
       /// zero and camera stops shaking.

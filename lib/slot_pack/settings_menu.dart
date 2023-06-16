@@ -4,9 +4,9 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:slot_package/slot_pack/game/audio_player_component.dart';
+import 'package:slot_package/const_colors.dart';
 
-import '../const_colors.dart';
+import 'game/audio_player_component.dart';
 import 'game_menu.dart';
 import 'game/game.dart';
 
