@@ -4,15 +4,15 @@ import 'package:flutter/material.dart';
 // import 'package:neon/neon.dart';
 
 class AppColors {
-  static const appLable = 'Aviator Start';
+  static const appLable = 'Aviator 0';
   static const myPackage = 'slot_package';
   static const glowingDuration = Duration(milliseconds: 4500);
-  static const backColor = Color.fromRGBO(246, 68, 72, 1); //any colors
-  static const frontColor = Color.fromRGBO(0, 150, 150, 1); //any colors
+  static const backColor = Color.fromRGBO(222, 0, 4, 1); //any colors
+  static const frontColor = Color.fromRGBO(8, 84, 236, 1); //any colors
   static const buttonColor =
-      Colors.brown; //[Colors. red,pink,purple,deepPurple,
+      Colors.deepOrange; //[Colors. red,pink,purple,deepPurple,
   //indigo,blue,lightBlue,cyan,teal,green,lightGreen,lime,yellow,amber,orange,deepOrange,brown,blueGrey]
-  static const double randomPadding = 37.5; //20-40 limit
+  static const double randomPadding = 24.5; //20-40 limit
   static const textButtonMenu = Colors.black;
   static const borderRadius =
       BorderRadius.all(Radius.circular(randomPadding * 1.9));
