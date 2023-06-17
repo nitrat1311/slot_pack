@@ -14,8 +14,10 @@ class RecordsTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    TextStyle style =
-        const TextStyle(color: Colors.white, fontWeight: FontWeight.bold);
+    TextStyle style = const TextStyle(
+        color: Colors.white,
+        fontWeight: FontWeight.bold,
+        backgroundColor: Colors.black54);
     return Scaffold(
       body: Stack(children: [
         Image.asset(
