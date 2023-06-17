@@ -14,7 +14,8 @@ class RecordsTable extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-
+    TextStyle style =
+        const TextStyle(color: Colors.white, fontWeight: FontWeight.bold);
     return Scaffold(
       body: Stack(children: [
         Image.asset(
@@ -51,9 +52,9 @@ class RecordsTable extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      Text('First  : 450'),
-                      Text('Second : 150'),
-                      Text('Third : 100'),
+                      Text('First  : 450', style: style),
+                      Text('Second : 150', style: style),
+                      Text('Third : 100', style: style),
                     ],
                   ),
                   SizedBox(height: 30.h),
