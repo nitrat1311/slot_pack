@@ -84,7 +84,6 @@ class MasksweirdGame extends FlameGame
         'animation_fire.png',
         'animation_right.png',
         'animation_forward.png',
-        'animation_back.png',
       ]);
 
       _audioPlayerComponent = AudioPlayerComponent();
@@ -99,15 +98,17 @@ class MasksweirdGame extends FlameGame
         rows: 1,
       ).createAnimation(from: 0, to: 1, row: 0, stepTime: 0.2, loop: false);
       animationBack = SpriteSheet.fromColumnsAndRows(
-        image: images.fromCache('animation_back.png'),
-        columns: 3,
-        rows: 1,
-      ).createAnimation(from: 0, to: 3, row: 0, stepTime: 0.2, loop: true);
-      animationForward = SpriteSheet.fromColumnsAndRows(
         image: images.fromCache('animation_forward.png'),
         columns: 3,
         rows: 1,
-      ).createAnimation(from: 0, to: 3, row: 0, stepTime: 0.2, loop: true);
+      )
+          .createAnimation(from: 0, to: 6, row: 0, stepTime: 0.2, loop: true)
+          .reversed();
+      animationForward = SpriteSheet.fromColumnsAndRows(
+        image: images.fromCache('animation_forward.png'),
+        columns: 6,
+        rows: 1,
+      ).createAnimation(from: 0, to: 6, row: 0, stepTime: 0.2, loop: true);
       animationRight = SpriteSheet.fromColumnsAndRows(
         image: images.fromCache('animation_right.png'),
         columns: 4,
