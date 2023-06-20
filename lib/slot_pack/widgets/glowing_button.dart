@@ -28,8 +28,8 @@ class GlowingButtonState extends State<GlowingButton> {
       decoration: BoxDecoration(
         border:
             Border.all(color: const Color.fromARGB(255, 20, 19, 19), width: 4),
-        borderRadius:
-            const BorderRadius.horizontal(left: Radius.elliptical(10, 50)),
+        borderRadius: const BorderRadius.horizontal(
+            left: Radius.elliptical(10, 50), right: Radius.elliptical(50, 10)),
         gradient: const LinearGradient(
           colors: [
             AppColors.backColor,

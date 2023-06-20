@@ -69,7 +69,7 @@ class GameMenu extends StatelessWidget {
                   height: AppColors.randomPadding + 20.h,
                 ),
                 Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.centerRight,
                   child: GestureDetector(
                     onTap: () {
                       Navigator.of(context).pushReplacement(
@@ -80,15 +80,18 @@ class GameMenu extends StatelessWidget {
                     },
                     child: GlowingButton(
                       child: Text(
-                        'start game',
+                        'start',
                         style: TextStyle(
                             color: AppColors.textButtonMenu, fontSize: 30.sp),
                       ),
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: AppColors.randomPadding + 20.h,
+                ),
                 Align(
-                  alignment: Alignment.centerRight,
+                  alignment: Alignment.center,
                   child: GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
@@ -106,9 +109,11 @@ class GameMenu extends StatelessWidget {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: AppColors.randomPadding + 20.h,
+                ),
                 Align(
-                  alignment:
-                      const Alignment(AppColors.randomPadding / 100, -0.8),
+                  alignment: const Alignment(0.1, -0.8),
                   child: GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
@@ -119,7 +124,7 @@ class GameMenu extends StatelessWidget {
                     },
                     child: GlowingButton(
                       child: Text(
-                        'my records',
+                        'my stats',
                         style: TextStyle(
                             color: AppColors.textButtonMenu, fontSize: 30.sp),
                       ),
