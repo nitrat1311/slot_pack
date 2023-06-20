@@ -96,13 +96,13 @@ class MasksweirdGame extends FlameGame
         image: images.fromCache('animation_right.png'),
         columns: 4,
         rows: 1,
-      ).createAnimation(from: 0, to: 1, row: 0, stepTime: 0.2, loop: false);
+      ).createAnimation(from: 0, to: 1, row: 0, stepTime: 0.1, loop: false);
       animationBack = SpriteSheet.fromColumnsAndRows(
         image: images.fromCache('animation_forward.png'),
-        columns: 3,
+        columns: 6,
         rows: 1,
       )
-          .createAnimation(from: 0, to: 6, row: 0, stepTime: 0.2, loop: true)
+          .createAnimation(from: 0, to: 6, row: 0, stepTime: 0.1, loop: true)
           .reversed();
       animationForward = SpriteSheet.fromColumnsAndRows(
         image: images.fromCache('animation_forward.png'),
