@@ -38,7 +38,7 @@ class GameMenu extends StatelessWidget {
         ),
         SizedBox(
           height: MediaQuery.of(context).size.height / 1.4,
-          width: MediaQuery.of(context).size.width / 1.8,
+          width: MediaQuery.of(context).size.width / 1.3,
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -46,7 +46,7 @@ class GameMenu extends StatelessWidget {
               children: [
                 Padding(
                   padding:
-                      REdgeInsets.fromLTRB(28, AppColors.randomPadding, 0, 0),
+                      REdgeInsets.fromLTRB(128, AppColors.randomPadding, 0, 0),
                   child: AutoSizeText(
                     AppColors.appLable,
                     wrapWords: false,
@@ -111,13 +111,13 @@ class GameMenu extends StatelessWidget {
                     ),
                   ),
                 ),
-                Align(
-                  alignment: const Alignment(0.1, -0.8),
+                Padding(
+                  padding: const EdgeInsets.only(left: 150),
                   child: GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
                         MaterialPageRoute(
-                          builder: (context) => RecordsTbl(),
+                          builder: (context) => const RecordsTbl(),
                         ),
                       );
                     },
