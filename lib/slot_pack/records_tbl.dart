@@ -8,7 +8,7 @@ import 'game_menu.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RecordsTbl extends StatelessWidget {
-  static List records = [30, 80, 7, 200, 350];
+  static List records = [10, 120, 70, 2010, 3700];
   const RecordsTbl({
     Key? key,
   }) : super(key: key);
@@ -59,7 +59,7 @@ class RecordsTbl extends StatelessWidget {
                             Shadow(
                               offset: const Offset(1, 1.0),
                               blurRadius: 2,
-                              color: Colors.brown.withOpacity(1),
+                              color: Colors.pink.withOpacity(1),
                             ),
                           ]),
                     ),

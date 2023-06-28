@@ -44,7 +44,7 @@ class GameMenu extends StatelessWidget {
               children: [
                 Padding(
                   padding:
-                      REdgeInsets.fromLTRB(0, AppColors.randomPadding, 0, 0),
+                      REdgeInsets.fromLTRB(28, AppColors.randomPadding, 0, 0),
                   child: AutoSizeText(
                     AppColors.appLable,
                     wrapWords: false,
@@ -52,7 +52,7 @@ class GameMenu extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         background: Paint()
-                          ..color = AppColors.buttonColor.withOpacity(0.3),
+                          ..color = Colors.black.withOpacity(0.3),
                         foreground: Paint()..color = AppColors.frontColor,
                         fontSize: 50,
                         fontWeight: FontWeight.normal,
@@ -60,7 +60,7 @@ class GameMenu extends StatelessWidget {
                           Shadow(
                             offset: Offset(3, 3.0),
                             blurRadius: 8,
-                            color: AppColors.backColor,
+                            color: Colors.white,
                           ),
                         ]),
                   ),
@@ -69,7 +69,7 @@ class GameMenu extends StatelessWidget {
                   height: AppColors.randomPadding + 20.h,
                 ),
                 Align(
-                  alignment: Alignment.centerRight,
+                  alignment: Alignment.centerLeft,
                   child: GestureDetector(
                     onTap: () {
                       Navigator.of(context).pushReplacement(
@@ -88,10 +88,10 @@ class GameMenu extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: AppColors.randomPadding + 20.h,
+                  height: AppColors.randomPadding + 120.h,
                 ),
                 Align(
-                  alignment: Alignment.center,
+                  alignment: Alignment.centerRight,
                   child: GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
@@ -110,7 +110,7 @@ class GameMenu extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: AppColors.randomPadding + 20.h,
+                  height: AppColors.randomPadding + 120.h,
                 ),
                 Align(
                   alignment: const Alignment(0.1, -0.8),
@@ -124,7 +124,7 @@ class GameMenu extends StatelessWidget {
                     },
                     child: GlowingButton(
                       child: Text(
-                        'my stats',
+                        'stats',
                         style: TextStyle(
                             color: AppColors.textButtonMenu, fontSize: 30.sp),
                       ),
