@@ -9,8 +9,7 @@ class AppColors {
   static const glowingDuration = Duration(milliseconds: 4500);
   static const backColor = Color.fromRGBO(25, 5, 180, 1); //any colors
   static const frontColor = Color.fromRGBO(247, 0, 247, 1); //any colors
-  static const buttonColor =
-      Colors.lightGreen; //[Colors. red,pink,purple,deepPurple,
+  static const buttonColor = Colors.pink; //[Colors. red,pink,purple,deepPurple,
   //indigo,blue,lightBlue,cyan,teal,green,lightGreen,lime,yellow,amber,orange,deepOrange,brown,blueGrey]
   static const double randomPadding = 28.5; //20-40 limit
   static const textButtonMenu = Colors.white;

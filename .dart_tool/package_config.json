@@ -134,12 +134,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "flutter_slot_machine",
-      "rootUri": "file:///C:/Users/romay/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_slot_machine-0.0.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "flutter_test",
       "rootUri": "file:///C:/tools/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -194,12 +188,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "neon",
-      "rootUri": "file:///C:/Users/romay/AppData/Local/Pub/Cache/hosted/pub.dev/neon-0.1.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "ordered_set",
       "rootUri": "file:///C:/Users/romay/AppData/Local/Pub/Cache/hosted/pub.dev/ordered_set-5.0.1",
       "packageUri": "lib/",
@@ -243,9 +231,9 @@
     },
     {
       "name": "path_provider_windows",
-      "rootUri": "file:///C:/Users/romay/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_windows-2.1.6",
+      "rootUri": "file:///C:/Users/romay/AppData/Local/Pub/Cache/hosted/pub.dev/path_provider_windows-2.1.7",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "2.18"
     },
     {
       "name": "platform",
@@ -350,7 +338,7 @@
       "languageVersion": "2.17"
     }
   ],
-  "generated": "2023-05-30T20:15:05.395881Z",
+  "generated": "2023-06-28T09:59:58.411645Z",
   "generator": "pub",
   "generatorVersion": "2.19.3"
 }
