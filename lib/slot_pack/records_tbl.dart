@@ -21,7 +21,7 @@ class RecordsTbl extends StatelessWidget {
       end: Alignment.bottomCenter,
       colors: <Color>[
         AppColors.frontColor,
-        AppColors.backColor,
+        Colors.white,
       ],
     ).createShader(Rect.fromCenter(
         center: Offset(0, 55.h),
@@ -49,8 +49,7 @@ class RecordsTbl extends StatelessWidget {
                     child: Text(
                       'Scores',
                       style: TextStyle(
-                          backgroundColor:
-                              Color.fromARGB(255, 28, 21, 18).withOpacity(0.8),
+                          backgroundColor: Colors.black.withOpacity(0.8),
                           foreground: Paint()
                             ..color = Colors.black
                             ..shader = linearGradient,
@@ -76,7 +75,7 @@ class RecordsTbl extends StatelessWidget {
                     ),
                     child: FloatingActionButton.small(
                       heroTag: null,
-                      backgroundColor: AppColors.frontColor,
+                      backgroundColor: Colors.black,
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => const GameMenu()));
