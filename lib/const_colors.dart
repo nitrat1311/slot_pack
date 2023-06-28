@@ -13,7 +13,7 @@ class AppColors {
       Colors.lightGreen; //[Colors. red,pink,purple,deepPurple,
   //indigo,blue,lightBlue,cyan,teal,green,lightGreen,lime,yellow,amber,orange,deepOrange,brown,blueGrey]
   static const double randomPadding = 28.5; //20-40 limit
-  static const textButtonMenu = Colors.black;
+  static const textButtonMenu = Colors.white;
   static const borderRadius = BorderRadius.all(
       Radius.elliptical(randomPadding * 1.9, randomPadding - 10));
   // static const neonFont = NeonFont.LasEnter;

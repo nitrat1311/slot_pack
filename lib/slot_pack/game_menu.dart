@@ -41,6 +41,8 @@ class GameMenu extends StatelessWidget {
           width: MediaQuery.of(context).size.width / 1.3,
           child: SingleChildScrollView(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Padding(
                   padding:
@@ -52,7 +54,7 @@ class GameMenu extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         background: Paint()
-                          ..color = Colors.black.withOpacity(0.3),
+                          ..color = Colors.white.withOpacity(0.3),
                         foreground: Paint()..color = AppColors.frontColor,
                         fontSize: 50,
                         fontWeight: FontWeight.normal,
@@ -108,9 +110,6 @@ class GameMenu extends StatelessWidget {
                       ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: AppColors.randomPadding + 120.h,
                 ),
                 Align(
                   alignment: const Alignment(0.1, -0.8),
