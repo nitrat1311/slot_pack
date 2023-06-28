@@ -38,7 +38,7 @@ class GameMenu extends StatelessWidget {
         ),
         SizedBox(
           height: MediaQuery.of(context).size.height / 1.4,
-          width: MediaQuery.of(context).size.width / 1.3,
+          width: MediaQuery.of(context).size.width / 1.8,
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
