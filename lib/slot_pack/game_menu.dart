@@ -112,7 +112,7 @@ class GameMenu extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 150),
+                  padding: REdgeInsets.fromLTRB(128, 0, 0, 0),
                   child: GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
