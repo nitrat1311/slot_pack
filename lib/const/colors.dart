@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const appLable = 'Legendary Sport';
+  static const appLable = 'Taxas de apostas - rates';
   static const myPackage = 'slot_package';
   static const backColor = Color.fromARGB(208, 0, 0, 0); //any colors
   static const frontColor = Color.fromARGB(255, 255, 255, 255); //any colors
