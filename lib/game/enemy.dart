@@ -11,7 +11,6 @@ import 'game.dart';
 import 'player.dart';
 import 'command.dart';
 import 'knows_game_size.dart';
-import 'audio_player_component.dart';
 
 // This class represent an enemy component.
 class Enemy extends SpriteAnimationComponent
@@ -151,9 +150,6 @@ class Enemy extends SpriteAnimationComponent
     removeFromParent();
     gameRef.player.addToScore(enemyData.killPoint);
 
-    gameRef.addCommand(Command<AudioPlayerComponent>(action: (audioPlayer) {
-      audioPlayer.playSfx('audio/crack.mp3');
-    }));
     // Generate 20 white circle particles with random speed and acceleration,
     // at current position of this enemy. Each particles lives for exactly
     // 0.1 seconds and will get removed from the game world after that.

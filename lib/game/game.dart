@@ -17,7 +17,6 @@ import 'enemy.dart';
 import 'health_bar.dart';
 import 'player.dart';
 import 'command.dart';
-import 'audio_player_component.dart';
 
 // This class is responsible for initializing and running the game-loop.
 class MasksweirdGame extends FlameGame
@@ -53,8 +52,6 @@ class MasksweirdGame extends FlameGame
 
   late final Background _background;
 
-  late AudioPlayerComponent _audioPlayerComponent;
-
   // List of commands to be processed in current update.
   final _commandList = List<Command>.empty(growable: true);
 
@@ -83,9 +80,6 @@ class MasksweirdGame extends FlameGame
         'ally.png',
         'animation_run.png'
       ]);
-
-      _audioPlayerComponent = AudioPlayerComponent();
-      add(_audioPlayerComponent);
 
       _background = Background();
       await add(_background);
@@ -247,21 +241,6 @@ class MasksweirdGame extends FlameGame
       // everything again in the same session.
       _isAlreadyLoaded = true;
     }
-  }
-
-  // This method gets called when game instance gets attached
-  // to Flutter's widget tree.
-  @override
-  void onAttach() {
-    if (buildContext != null) {}
-    _audioPlayerComponent.playBgm('music.mp3');
-    super.onAttach();
-  }
-
-  @override
-  void onDetach() {
-    _audioPlayerComponent.stopBgm();
-    super.onDetach();
   }
 
   @override

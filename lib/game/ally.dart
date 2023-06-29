@@ -8,7 +8,6 @@ import 'game.dart';
 import 'player.dart';
 import 'command.dart';
 import 'knows_game_size.dart';
-import 'audio_player_component.dart';
 
 import '../../models/ally_data.dart';
 
@@ -86,9 +85,6 @@ class Ally extends SpriteComponent
         gameRef.player.animation == gameRef.animationKick &&
         allyData.hMove) {
       removeFromParent();
-      gameRef.addCommand(Command<AudioPlayerComponent>(action: (audioPlayer) {
-        audioPlayer.playSfx('audio/crack.mp3');
-      }));
       gameRef.player.addToScore(allyData.killPoint * 10);
       Bullet bullet = Bullet(
           animation: gameRef.fire,
