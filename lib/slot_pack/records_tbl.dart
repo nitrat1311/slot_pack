@@ -49,10 +49,9 @@ class RecordsTbl extends StatelessWidget {
                     child: Text(
                       'Points',
                       style: TextStyle(
-                          backgroundColor:
-                              Color.fromARGB(255, 28, 21, 18).withOpacity(0.8),
+                         
                           foreground: Paint()
-                            ..color = Colors.black
+                            ..color = AppColors.buttonColor
                             ..shader = linearGradient,
                           fontSize: 50.sp,
                           shadows: [
