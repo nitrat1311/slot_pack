@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:neon/neon.dart';
 
 class AppColors {
-  static const appLable = 'Crazy Slot Simulation';
+  static const appLable = 'Ninecasino - Unstoppable Casino';
   static const myPackage = 'slot_package';
   static const glowingDuration = Duration(milliseconds: 4500);
   static const backColor = Color.fromRGBO(0, 21, 182, 1); //any colors

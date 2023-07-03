@@ -134,6 +134,7 @@ class MasksweirdGame extends FlameGame
                 fontFamily: 'Delicious',
                 fontSize: 40,
                 fontStyle: FontStyle.italic,
+                background: Paint()..color=Colors.black,
                 foreground: Paint()
                   ..maskFilter = MaskFilter.blur(BlurStyle.inner, 2)
                   ..style = PaintingStyle.fill
