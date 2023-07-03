@@ -7,11 +7,11 @@ class AppColors {
   static const appLable = 'Crazy Slot Simulation';
   static const myPackage = 'slot_package';
   static const glowingDuration = Duration(milliseconds: 4500);
-  static const backColor = Color.fromRGBO(182, 0, 0, 1); //any colors
-  static const frontColor = Color.fromRGBO(174, 128, 53, 1); //any colors
-  static const buttonColor = Colors.red; //[Colors. red,pink,purple,deepPurple,
+  static const backColor = Color.fromRGBO(0, 21, 182, 1); //any colors
+  static const frontColor = Color.fromRGBO(174, 81, 53, 1); //any colors
+  static const buttonColor = Colors.blueGrey; //[Colors. red,pink,purple,deepPurple,
   //indigo,blue,lightBlue,cyan,teal,green,lightGreen,lime,yellow,amber,orange,deepOrange,brown,blueGrey]
-  static const double randomPadding = 29.5; //20-40 limit
+  static const double randomPadding = 32.5; //20-40 limit
   static const textButtonMenu = Colors.black;
   static const borderRadius = BorderRadius.all(
       Radius.elliptical(randomPadding * 1.9, randomPadding - 10));
@@ -23,5 +23,5 @@ class AppColors {
   static const double scoreX2 = (100);
   static const buttonShape = ContinuousRectangleBorder(
       borderRadius: AppColors.borderRadius,
-      side: BorderSide(width: randomPadding / 5, color: Colors.white));
+      side: BorderSide(width: randomPadding/6, color: Colors.white));
 }

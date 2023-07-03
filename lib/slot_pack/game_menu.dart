@@ -71,7 +71,7 @@ class GameMenu extends StatelessWidget {
                     padding: REdgeInsets.only(left: AppColors.randomPadding),
                     child: GestureDetector(
                       child: Neon(
-                        text: 'Start',
+                        text: 'GO',
                         color: AppColors.buttonColor,
                         fontSize: 40.h,
                         font: AppColors.neonFont,
@@ -85,7 +85,7 @@ class GameMenu extends StatelessWidget {
                       },
                     ),
                   ),
-                  SizedBox(height: 2 * AppColors.randomPadding.h),
+                  SizedBox(height: AppColors.randomPadding.h),
                   Padding(
                     padding:
                         REdgeInsets.only(left: AppColors.randomPadding - 10),
@@ -106,7 +106,7 @@ class GameMenu extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: AppColors.randomPadding.h),
+                  SizedBox(height: 2*AppColors.randomPadding.h),
                   Padding(
                     padding:
                         REdgeInsets.only(right: AppColors.randomPadding + 30),
@@ -119,7 +119,7 @@ class GameMenu extends StatelessWidget {
                         );
                       },
                       child: Neon(
-                        text: 'music',
+                        text: 'my music',
                         color: AppColors.buttonColor,
                         fontSize: 40.h,
                         font: AppColors.neonFont,
