@@ -25,7 +25,7 @@ class GameMenu extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
     );
-    const double angle = AppColors.randomPadding / 200;
+    const double angle = AppColors.randomPadding / 290;
 
     return Scaffold(
       body: Stack(children: [
@@ -85,25 +85,7 @@ class GameMenu extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20.h + AppColors.randomPadding),
-                  Transform.rotate(
-                    angle: angle,
-                    child: GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => const SettingsMenu(),
-                          ),
-                        );
-                      },
-                      child: GlowingButton(
-                        child: Text(
-                          'settings',
-                          style: TextStyle(
-                              color: AppColors.textButtonMenu, fontSize: 30.sp),
-                        ),
-                      ),
-                    ),
-                  ),
+                  
                   Padding(
                     padding: REdgeInsets.fromLTRB(
                         0, 5 + AppColors.randomPadding, 0, 0),
@@ -125,6 +107,25 @@ class GameMenu extends StatelessWidget {
                               color: AppColors.backColor,
                             ),
                           ]),
+                    ),
+                  ),
+                  Transform.rotate(
+                    angle: angle,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const SettingsMenu(),
+                          ),
+                        );
+                      },
+                      child: GlowingButton(
+                        child: Text(
+                          'settings',
+                          style: TextStyle(
+                              color: AppColors.textButtonMenu, fontSize: 30.sp),
+                        ),
+                      ),
                     ),
                   ),
                 ],
