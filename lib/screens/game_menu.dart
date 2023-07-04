@@ -115,7 +115,7 @@ class GameMenu extends StatelessWidget {
                       style: TextStyle(
                           foreground: Paint()..color = AppColors.frontColor,
                           background: Paint()
-                            ..color = AppColors.backColor.withOpacity(0.5),
+                            ..color = AppColors.textButtonMenu,
                           fontSize: 50,
                           fontWeight: FontWeight.normal,
                           shadows: const [

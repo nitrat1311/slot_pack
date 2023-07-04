@@ -170,7 +170,8 @@ class MasksweirdGame extends FlameGame
         position: Vector2(30, AppColors.randomPadding),
         textRenderer: TextPaint(
           style: TextStyle(
-              background: Paint()..color = AppColors.backColor.withOpacity(0.5),
+                         background: Paint()
+                            ..color = AppColors.textButtonMenu,
               letterSpacing: 5,
               fontFamily: 'RobotoSlab',
               fontSize: 22,
@@ -206,7 +207,8 @@ class MasksweirdGame extends FlameGame
         position: Vector2(size.x - 70, AppColors.randomPadding),
         textRenderer: TextPaint(
           style: TextStyle(
-              background: Paint()..color = AppColors.backColor.withOpacity(0.5),
+                       background: Paint()
+                            ..color = AppColors.textButtonMenu,
               letterSpacing: 5,
               fontFamily: 'Jost',
               fontSize: 22,
