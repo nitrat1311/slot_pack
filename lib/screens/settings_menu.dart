@@ -43,7 +43,7 @@ class _SettingsMenuState extends State<SettingsMenu> {
                     child: Text(
                       'SETTINGS',
                       style: TextStyle(
-                          backgroundColor: AppColors.backColor.withOpacity(0.8),
+                          backgroundColor: Colors.black,
                           foreground: Paint()..color = AppColors.frontColor,
                           fontSize: 50.sp,
                           shadows: const [

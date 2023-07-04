@@ -40,7 +40,7 @@ class PauseMenu extends StatelessWidget {
                     fontSize: 50.sp,
                     letterSpacing: 5.0,
                     background: Paint()
-                      ..color = AppColors.buttonColor.withOpacity(0.5),
+                      ..color = Colors.black,
                     foreground: Paint()
                       ..style = PaintingStyle.fill
                       ..strokeWidth = 1
@@ -60,7 +60,7 @@ class PauseMenu extends StatelessWidget {
                   borderRadius: AppColors.borderRadius,
                 ),
                 child: FloatingActionButton.large(
-                  backgroundColor: AppColors.backColor,
+                  backgroundColor: Colors.black,
                   onPressed: () {
                     gameRef.resumeEngine();
                     gameRef.overlays.remove(PauseMenu.id);
@@ -80,7 +80,7 @@ class PauseMenu extends StatelessWidget {
                   borderRadius: AppColors.borderRadius,
                 ),
                 child: FloatingActionButton.large(
-                  backgroundColor: AppColors.backColor,
+                  backgroundColor: Colors.black,
                   onPressed: () {
                     gameRef.overlays.remove(PauseMenu.id);
                     gameRef.overlays.add(PauseButton.id);
@@ -104,7 +104,7 @@ class PauseMenu extends StatelessWidget {
             ),
             margin: REdgeInsets.only(top: 10),
             child: FloatingActionButton.large(
-              backgroundColor: AppColors.backColor,
+              backgroundColor: Colors.black,
               elevation: 20,
               onPressed: () {
                 gameRef.overlays.remove(PauseMenu.id);

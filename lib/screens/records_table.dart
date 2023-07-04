@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:slot_package/widgets/glowing_button.dart';
 
 import 'game_menu.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -37,7 +38,7 @@ class RecordsTable extends StatelessWidget {
                       'Scores',
                       style: TextStyle(
                           backgroundColor:
-                              AppColors.buttonColor.withOpacity(0.5),
+                            Colors.black,
                           foreground: Paint()..color = AppColors.frontColor,
                           fontSize: 50.sp,
                           shadows: const [
@@ -50,10 +51,12 @@ class RecordsTable extends StatelessWidget {
                     ),
                   ),
                   const Center(
-                      child: Text(
-                    'Player Best Score : 250',
-                    style: TextStyle(color: AppColors.textColorInsideGame),
-                  )),
+                      child: GlowingButton(
+                        child: Text(
+                                          'Player Best Score : 1223',
+                                          style: TextStyle(color: AppColors.textColorInsideGame),
+                                        ),
+                      )),
                   SizedBox(height: 30.h),
                   Container(
                     decoration: BoxDecoration(
