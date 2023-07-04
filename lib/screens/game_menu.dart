@@ -66,7 +66,7 @@ class GameMenu extends StatelessWidget {
                     height: 20.h + AppColors.randomPadding,
                   ),
                   Transform.rotate(
-                    angle: -angle,
+                    angle: angle,
                     child: GestureDetector(
                       onTap: () {
                         Navigator.of(context).push(
@@ -84,8 +84,7 @@ class GameMenu extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20.h + AppColors.randomPadding),
-                  
+                
                   Padding(
                     padding: REdgeInsets.fromLTRB(
                         0, 5 + AppColors.randomPadding, 0, 0),
