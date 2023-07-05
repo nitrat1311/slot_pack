@@ -26,6 +26,6 @@ class GameMenu extends StatelessWidget {
     );
 
 
-    return GamePlay();
+    return const GamePlay();
   }
 }
