@@ -42,7 +42,7 @@ class StartPage extends Component with HasGameRef<RouterGame> {
         text: AppColors.appLable,
         textRenderer: TextPaint(
           style: const TextStyle(
-            fontSize: 64,
+            fontSize: 24,
             color: Color(0xFFC8FFF5),
             fontWeight: FontWeight.w800,
           ),
