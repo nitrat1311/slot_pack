@@ -1,48 +1,65 @@
 import 'dart:math';
 import 'package:flame/components.dart';
+import 'package:flame/sprite.dart';
 
-import '../app_state.dart';
-import 'game.dart';
+import '../models/enemy_data.dart';
+
 import 'enemy.dart';
+import 'game2.dart';
 import 'knows_game_size.dart';
 
-import '../../models/enemy_data.dart';
+
 
 // This component class takes care of spawning new enemy components
 // randomly from top of the screen. It uses the HasGameRef mixin so that
 // it can add child components.
 class EnemyManager extends Component
-    with KnowsGameSize, HasGameRef<MasksweirdGame> {
+    with KnowsGameSize, HasGameRef<RouterGame> {
   // The timer which runs the enemy spawner code at regular interval of time.
   late Timer _timer;
+late SpriteSheet ballSprite;
+final double lvl;
 
-  // Controls for how long EnemyManager should stop spawning new enemies.
-  late Timer _freezeTimer;
 
-  // A reference to spriteSheet contains enemy sprites.
-  SpriteAnimation spriteSheet;
 
   // Holds an object of Random class to generate random numbers.
   Random random = Random();
 
-  EnemyManager({required this.spriteSheet}) : super() {
+  EnemyManager( {required this.lvl}) : super() {
     // Sets the timer to call _spawnEnemy() after every 1 second, until timer is explicitly stops.
-    _timer = Timer(0.9, onTick: _spawnEnemy, repeat: true);
+    _timer = Timer(1*lvl, onTick: _spawnEnemy, repeat: true);
 
-    // Sets freeze time to 2 seconds. After 2 seconds spawn timer will start again.
-    _freezeTimer = Timer(2, onTick: () {
-      _timer.start();
-    });
+    // Sets freeze time to 2 seconds. After 2 seconds spawn timer will start again
   }
+@override
+  Future<void> onLoad() async {
+    // Makes the game use a fixed resolution irrespective of the windows size.
+    gameRef.images.prefix = 'packages/slot_package/assets/images/';
+    // Initilize the game world only one time.
 
+      await gameRef.images.loadAll([
+         'animation_fire.png',
+      ]);
+
+
+      ballSprite = SpriteSheet.fromColumnsAndRows(
+        image: gameRef.images.fromCache('animation_fire.png'),
+        columns: 6,
+        rows: 1,
+      );
+     
+      
+      }
+
+      
   // Spawns a new enemy at random position at the top of the screen.
   void _spawnEnemy() {
-    Vector2 initialSize = Vector2(104 / 2, 101 / 2);
+    Vector2 initialSize = Vector2(64, 64);
 
     // random.nextDouble() generates a random number between 0 and 1.
     // Multiplying it by gameRef.size.x makes sure that the value remains between 0 and width of screen.
     Vector2 position =
-        Vector2((random.nextDouble() * 200) + 100 + gameRef.size.x / 18, 0);
+        Vector2(gameRef.size.x - 10, (random.nextDouble() * 100));
 
     // Clamps the vector such that the enemy sprite remains within the screen.
     position.clamp(
@@ -54,14 +71,13 @@ class EnemyManager extends Component
     if (gameRef.buildContext != null) {
       // Get current score and figure out the max level of enemy that
       // can be spawned for this score.
-      int currentScore = gameRef.player.score;
-      int maxLevel = mapScoreToMaxEnemyLevel(currentScore);
+
 
       /// Gets a random [EnemyData] object from the list.
-      final enemyData = _enemyDataList.elementAt(random.nextInt(maxLevel * 4));
+      final enemyData = _enemyDataList.elementAt(random.nextInt(4));
 
       Enemy enemy = Enemy(
-        animation: spriteSheet,
+        sprite: ballSprite.getSpriteById(enemyData.spriteId),
         size: initialSize,
         position: position,
         enemyData: enemyData,
@@ -81,7 +97,7 @@ class EnemyManager extends Component
   int mapScoreToMaxEnemyLevel(int score) {
     int level = 1;
 
-    if (score > 100) {
+    if (score > 10) {
       level = 2;
     }
 
@@ -109,7 +125,6 @@ class EnemyManager extends Component
     super.update(dt);
     // Update timers with delta time to make them tick.
     _timer.update(dt);
-    _freezeTimer.update(dt);
   }
 
   // Stops and restarts the timer. Should be called
@@ -120,11 +135,6 @@ class EnemyManager extends Component
   }
 
   // Pauses spawn timer for 2 seconds when called.
-  void freeze() {
-    _timer.stop();
-    _freezeTimer.stop();
-    _freezeTimer.start();
-  }
 
   /// A private list of all [EnemyData]s.
   static const List<EnemyData> _enemyDataList = [

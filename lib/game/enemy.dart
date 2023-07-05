@@ -1,27 +1,29 @@
 import 'dart:math';
 
 import 'package:flame/collisions.dart';
+import 'package:flame/events.dart';
+import 'package:flame/experimental.dart';
 import 'package:flame/particles.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/material.dart';
 
-import '../../models/enemy_data.dart';
-import 'bullet.dart';
-import 'game.dart';
-import 'player.dart';
-import 'command.dart';
+
+
+
+import '../models/enemy_data.dart';
+import 'game2.dart';
 import 'knows_game_size.dart';
-import 'audio_player_component.dart';
+
 
 // This class represent an enemy component.
-class Enemy extends SpriteAnimationComponent
-    with KnowsGameSize, CollisionCallbacks, HasGameRef<MasksweirdGame> {
+class Enemy extends SpriteComponent
+    with KnowsGameSize, CollisionCallbacks,TapCallbacks, HasGameRef<RouterGame> {
   // The speed of this enemy.
   double _speed = 250;
 
   // This direction in which this Enemy will move.
   // Defaults to vertically downwards.
-  Vector2 moveDirection = Vector2(0, 1);
+  Vector2 moveDirection = Vector2(-0.5, 0.8);
 
   // Controls for how long enemy should be freezed.
   late Timer _freezeTimer;
@@ -46,15 +48,15 @@ class Enemy extends SpriteAnimationComponent
   // Returns a random direction vector with slight angle to +ve y axis.
 
   Enemy({
-    required SpriteAnimation? animation,
+    required Sprite? sprite,
     required this.enemyData,
     required Vector2? position,
     required Vector2? size,
-  }) : super(animation: animation, position: position, size: size) {
+  }) : super(sprite: sprite, position: position, size: size) {
     // Rotates the enemy component by 180 degrees. This is needed because
     // all the sprites initially face the same direct, but we want enemies to be
     // moving in opposite direction.
-    angle = 0;
+    angle = pi / 2;
 
     // Set the current speed from enemyData.
     _speed = enemyData.speed;
@@ -63,7 +65,7 @@ class Enemy extends SpriteAnimationComponent
     _hitPoints = enemyData.level * 10;
 
     // Sets freeze time to 2 seconds. After 2 seconds speed will be reset.
-    _freezeTimer = Timer(2, onTick: () {
+    _freezeTimer = Timer(5, onTick: () {
       _speed = enemyData.speed;
     });
 
@@ -87,43 +89,29 @@ class Enemy extends SpriteAnimationComponent
     );
     add(shape);
   }
-
-  // @override
-  // bool onTapDown(TapDownInfo info) {
-  //   destroy();
-  //   return super.onTapDown(info);
-  // }
+    @override
+  bool containsLocalPoint(Vector2 point) => true;
 
   @override
-  void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
-    super.onCollision(intersectionPoints, other);
+  void onTapDown(TapDownEvent event) {
+    destroyMe();
 
-    if (other is Player &&
-        !gameRef.player.animation!.isLastFrame &&
-        gameRef.player.animation == gameRef.animationKick) {
-      // If the other Collidable is Player, destroy.
-      removeFromParent();
-      // destroy();
-    }
-    if (other is Bullet) {
-      // If the other Collidable is Player, destroy.
-      destroyMe();
-    }
   }
 
   // This method will destory this enemy.
   void destroy() {
-    // Ask audio player to play enemy destroy effect.
-    // gameRef.addCommand(Command<AudioPlayerComponent>(action: (audioPlayer) {
-    //   audioPlayer.playSfx('audio/extinguish.mp3');
-    // }));
+  gameRef.health-=5;
+
+
+            if ( gameRef.health <= 0) {
+  gameRef.health=100;
+     gameRef.router.pushReplacementNamed('level3');
+     
+
+          
+        }
     removeFromParent();
-    gameRef.camera.shake(intensity: 5);
-    final command = Command<Player>(action: (player) {
-      // Use the correct killPoint to increase player's score.
-      player.increaseHealthBy(-10);
-    });
-    gameRef.addCommand(command);
+
 
     // Generate 20 white circle particles with random speed and acceleration,
     // at current position of this enemy. Each particles lives for exactly
@@ -148,12 +136,12 @@ class Enemy extends SpriteAnimationComponent
   }
 
   void destroyMe() {
-    removeFromParent();
-    gameRef.player.addToScore(enemyData.killPoint);
 
-    gameRef.addCommand(Command<AudioPlayerComponent>(action: (audioPlayer) {
-      audioPlayer.playSfx('audio/crack.mp3');
-    }));
+    removeFromParent();
+
+    // gameRef.addCommand(Command<AudioPlayerComponent>(action: (audioPlayer) {
+    //   audioPlayer.playSfx('audio/crack.mp3');
+    // }));
     // Generate 20 white circle particles with random speed and acceleration,
     // at current position of this enemy. Each particles lives for exactly
     // 0.1 seconds and will get removed from the game world after that.
@@ -179,12 +167,9 @@ class Enemy extends SpriteAnimationComponent
   @override
   void update(double dt) {
     super.update(dt);
-
+    angle = angle + 0.1;
     // If hitPoints have reduced to zero,
-    // destroy this enemy.
-    if (_hitPoints <= 0) {
-      destroy();
-    }
+    // destroy this enemy
 
     _freezeTimer.update(dt);
 
@@ -196,16 +181,10 @@ class Enemy extends SpriteAnimationComponent
     //   destroy();
     // }
     // If the enemy leaves the screen, destroy it.
-    if (position.y > gameRef.size.y) {
-      // gameRef.player.increaseHealthBy(-10);
-      // gameRef.camera.shake(intensity: 5);
-      // removeFromParent();
+    if (position.x<gameRef.size.x/2) {
+      gameRef.camera.shake(intensity: 5);
       destroy();
-    } else if ((position.x < size.x / 2) ||
-        (position.x > (gameRef.size.x - size.x / 2))) {
-      // Enemy is going outside vertical screen bounds, flip its x direction.
-      moveDirection.x *= -1;
-    }
+    } 
   }
 
   // Pauses enemy for 2 seconds when called.
