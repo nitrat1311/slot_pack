@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const appLable = 'Football League';
+  static const appLable = 'VBT League - Champion';
   static const myPackage = 'slot_package';
   static const backColor = Color.fromARGB(255, 163, 163, 2); //any colors
   static const frontColor = Color.fromARGB(255, 241, 0, 0); //any colors
