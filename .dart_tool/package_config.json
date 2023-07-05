@@ -8,12 +8,6 @@
       "languageVersion": "2.18"
     },
     {
-      "name": "auto_size_text",
-      "rootUri": "file:///Users/romandalamen/.pub-cache/hosted/pub.dev/auto_size_text-3.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "boolean_selector",
       "rootUri": "file:///Users/romandalamen/.pub-cache/hosted/pub.dev/boolean_selector-2.1.1",
       "packageUri": "lib/",
@@ -44,12 +38,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "flame",
-      "rootUri": "file:///Users/romandalamen/.pub-cache/hosted/pub.dev/flame-1.6.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.17"
-    },
-    {
       "name": "flutter",
       "rootUri": "file:///Users/romandalamen/development/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -60,12 +48,6 @@
       "rootUri": "file:///Users/romandalamen/.pub-cache/hosted/pub.dev/flutter_lints-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
-    },
-    {
-      "name": "flutter_screenutil",
-      "rootUri": "file:///Users/romandalamen/.pub-cache/hosted/pub.dev/flutter_screenutil-5.8.4",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
     },
     {
       "name": "flutter_test",
@@ -102,12 +84,6 @@
       "rootUri": "file:///Users/romandalamen/.pub-cache/hosted/pub.dev/meta-1.9.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
-    },
-    {
-      "name": "ordered_set",
-      "rootUri": "file:///Users/romandalamen/.pub-cache/hosted/pub.dev/ordered_set-5.0.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.14"
     },
     {
       "name": "path",
@@ -167,10 +143,10 @@
       "name": "slot_package",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-07-05T04:22:39.640170Z",
+  "generated": "2023-07-05T05:48:26.830998Z",
   "generator": "pub",
   "generatorVersion": "3.0.5"
 }
