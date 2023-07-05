@@ -90,9 +90,9 @@ class GameMenu extends StatelessWidget {
                   Container(
                     padding: REdgeInsets.fromLTRB(
                         0, 5 + AppColors.randomPadding, 0, 0),
-                    decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.5),
-                        border: const Border.symmetric(
+                    decoration: const BoxDecoration(
+                        color: Colors.black,
+                        border: Border.symmetric(
                             vertical:
                                 BorderSide(color: Colors.amber, width: 2))),
                     child: AutoSizeText(
